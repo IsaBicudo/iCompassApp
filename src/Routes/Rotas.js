@@ -8,10 +8,9 @@ import { AuthContext } from '../Context/AuthContext';
 import Home from '../Pages/Home';
 // import Busca from '../Pages/Busca';
 import Login from '../Pages/Login';
-import Homeico from '../Pages/Homeico';
-// import Videos from '../Pages/Videos';
-// import Perfil from '../Pages/Perfil';
-// import Inserir from '../Pages/Inserir';
+import Videos from '../Pages/Videos';
+import Perfil from '../Pages/Perfil';
+import Inserir from '../Pages/Inserir';
 
 
 const Tab = createBottomTabNavigator();
