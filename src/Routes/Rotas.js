@@ -5,13 +5,12 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import { useContext } from 'react';
 import { AuthContext } from '../Context/AuthContext';
 
-import Home from '../Pages/Home';
+import Homeico from '../Pages/Homeico';
 // import Busca from '../Pages/Busca';
-import Login from '../Pages/Login';
-import Videos from '../Pages/Videos';
-import Perfil from '../Pages/Perfil';
-import Inserir from '../Pages/Inserir';
-
+//import Login from '../Pages/Login';
+//import Videos from '../Pages/Videos';
+//import Perfil from '../Pages/Perfil';
+//import Inserir from '../Pages/Inserir';
 
 const Tab = createBottomTabNavigator();
 
