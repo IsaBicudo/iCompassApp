@@ -5,6 +5,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import { useContext } from 'react';
 import { AuthContext } from '../Context/AuthContext';
 
+
 import Homeico from '../Pages/Homeico';
 // import Busca from '../Pages/Busca';
 //import Login from '../Pages/Login';
@@ -43,6 +44,7 @@ export default function Rotas() {
                         ),
                     }}
                 />
+                
             </Tab.Navigator>
         </NavigationContainer>
     )
