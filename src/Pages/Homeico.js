@@ -5,10 +5,10 @@ export default function Homeico() {
 
   const banner1 = [
     require('../../assets/mulheres.png'),
-    require('../../assets/vitorbanner.jpeg'),
-    require('../../assets/isabellabaner.jpeg'),
-    require('../../assets/melinabanner.jpeg'),
-    require('../../assets/bannerplanos.jpeg'),
+    require('../../assets/mulheres2.png'),
+    require('../../assets/vitorba.png'),
+    require('../../assets/isabellaba.png'),
+    require('../../assets/melinaba.png'),
 
   ];
 
