@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import { StyleSheet, View, Text, Image, FlatList, ScrollView } from 'react-native'
 
+
 export default function Homeico() {
 
   const banner1 = [
-    require('../../assets/mulheres.png'),
-    require('../../assets/mulheres2.png'),
-    require('../../assets/vitorba.png'),
-    require('../../assets/isabellaba.png'),
-    require('../../assets/melinaba.png'),
 
+    require('../../assets/melinabanner.png'),
+    require('../../assets/vitorbanner.png'),
+    require('../../assets/mulheresbanner.png'),
+    require('../../assets/isabellabanner.png'),
   ];
 
   const banner2 = [
@@ -42,7 +42,8 @@ export default function Homeico() {
             horizontal={true}
             data={banner1}
             renderItem={({ item }) => (
-              <Image source={item} style={{ width: 660, height: 170,  }} />
+              <Image source={item} style={{  borderRadius: 5, marginRight: 20, marginLeft: 2 }} />
+             
             )}
             />
         </View>
@@ -53,7 +54,11 @@ export default function Homeico() {
             horizontal={true}
             data={banner2}
             renderItem={({ item }) => (
-              <Image source={item} style={{ width: 250, height: 300, marginLeft: 30, marginRight:30  }} />
+              <View style={css.shadowBox}>
+
+              <Image source={item} style={[style=css.image, { width: 250, height: 300, marginLeft: 30,marginRight:10, borderWidth: 2, borderRadius: 10, borderColor:"#A076F9"  }]} />
+              </View>
+              
             )}
             />
           </View>
@@ -66,7 +71,9 @@ export default function Homeico() {
             horizontal={true}
             data={banner3}
             renderItem={({ item }) => (
-              <Image source={item} style={{ width: 250, height: 300, marginLeft: 30, marginRight:30  }} />
+              
+              <Image source={item} style={{ width: 250, height: 300, marginLeft: 30, marginRight:10,  borderRadius: 10, borderColor: "#FFFFFF", borderWidth: 2,   }} />
+              
             )}
             />
             <View style={css.linhafim}></View>
@@ -81,6 +88,7 @@ export default function Homeico() {
             </View>
           </View>
         </View>
+        
         </View>
       </ScrollView>
         
@@ -110,17 +118,17 @@ const css = StyleSheet.create({
     },
     fundocarrosel:{
       width: "100%",
-      height: 200,
+      height: 190,
       backgroundColor: "black"
     },
     txtbanner2:{
       textAlign: "center",
       fontSize: 20,
       marginTop: 40,
-      fontWeight: "bold"
+      fontWeight:"bold",
     },
     banner2:{
-      marginTop: 30
+      marginTop: 30,
     },
     fim:{
       height: 750,
@@ -149,7 +157,7 @@ const css = StyleSheet.create({
     },
     textrodapegm:{
       color: 'white',
-      marginLeft: 200,
+      marginLeft: 205,
       marginTop: -40,
       fontSize: 16
     },
@@ -165,5 +173,6 @@ const css = StyleSheet.create({
         marginTop:30,
         marginLeft: 20,
         marginBottom: -25
-    }
-})
+    },
+    });
+    
