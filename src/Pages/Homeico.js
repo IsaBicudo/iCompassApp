@@ -152,7 +152,7 @@ const css = StyleSheet.create({
     },
     textrodape:{
       color: 'white',
-      marginLeft: 30,
+      marginLeft: 28,
       marginTop: 20
     },
     textrodapegm:{
@@ -164,7 +164,7 @@ const css = StyleSheet.create({
     redessc: {
       height: 30,
       width: 180,
-      marginLeft: '45%',
+      marginLeft: '49%',
       marginTop: 15
     },
     logorodape:{
