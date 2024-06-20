@@ -1,4 +1,4 @@
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, Image } from 'react-native'
+import { View, Text, TextInput, TouchableOpacity, ScrollView, Image, StyleSheet } from 'react-native'
 import React, { useContext, useState } from 'react'
 import { AuthContext } from '../Context/AuthContext';
 
@@ -10,41 +10,46 @@ export default function Login() {
     const { Login, error } = useContext(AuthContext);
 
     function RealizaLogin() {
-       Login( email, senha );
+        Login(email, senha)
     }
-
-
+    
     return (
         <ScrollView contentContainerStyle={css.container}>
-            <Image source={require("../../assets/logo.png")} style={css.logo} />
-            <TextInput
-                inputMode="email"
-                placeholder="Email"
-                style={css.input}
-                value={email}
-                onChangeText={(digitado) => setEmail(digitado)}
-                placeholderTextColor="white"
-            />
-            <TextInput
-                inputMode="text"
-                placeholder="Password"
-                secureTextEntry={true}
-                style={css.input}
-                value={senha}
-                onChangeText={(digitado) => setSenha(digitado)}
-                placeholderTextColor="white"
-            />
-            <View style={css.forgot}>
-                <Text style={css.forgotText}>Esqueceu a senha?</Text>
-            </View>
-            <TouchableOpacity style={css.btnLogin} onPress={RealizaLogin}>
-                <Text style={css.btnLoginText}>Log In</Text>
-            </TouchableOpacity>
-            {error &&
-                <View style={css.error}>
-                    <Text style={css.errorText}>Revise os campos. Tente novamente!</Text>
+            <View style={css.box}>
+                <Image source={require("../../assets/logo-icompass.png")} style={css.logo} />
+                <TextInput
+                    inputMode="email"
+                    placeholder="Email"
+                    style={css.input}
+                    value={email}
+                    onChangeText={(digitado) => setEmail(digitado)}
+                    placeholderTextColor="#686D76"
+                />
+                <TextInput
+                    inputMode="text"
+                    placeholder="Password"
+                    secureTextEntry={true}
+                    style={css.input}
+                    value={senha}
+                    onChangeText={(digitado) => setSenha(digitado)}
+                    placeholderTextColor="#686D76"
+                />
+                <View style={css.esqueciSenha}>
+                    <Text style={css.esqueciSenhaText}>Esqueci minha senha!</Text>
                 </View>
-            }
+                <TouchableOpacity style={css.btnLogin} onPress={RealizaLogin}>
+                    <Text style={css.btnLoginText}>LOGAR</Text>
+                </TouchableOpacity>
+                <View style={css.semCadastro}>
+                    <Text style={css.semCadastroText}>Ainda não tem uma conta?</Text>
+                    <Text style={css.cadastroText}>Cadastre-se</Text>
+                </View>
+                {error &&
+                    <View style={css.error}>
+                        <Text style={css.errorText}>Revise os campos. Tente novamente!</Text>
+                    </View>
+                }
+            </View>
         </ScrollView>
     )
 }
@@ -65,28 +70,36 @@ const css = StyleSheet.create({
         width: "90%",
         height: 50,
         borderRadius: 10,
-        marginBottom: 15,
+        marginBottom: 18,
         padding: 15,
-        backgroundColor: "#262626",
-        color: "white"
+        backgroundColor: "white",
+        color: "black",
     },
-    forgot: {
+    semCadastro: {
         width: "90%",
         marginTop: 10,
-        justifyContent: "flex-end",
-        alignItems: "flex-end",
+        justifyContent: "flex-start",
+        alignItems: "flex-start",
+        display: "flex",
+        flexDirection: "row",
+        gap:40
+
     },
-    forgotText: {
-        color: "#0195fd",
-        fontWeight: "bold"
+    semCadastroText: {
+        color: "white",
+        fontWeight: "bold",
+    },
+    cadastroText: {
+        color: "#FF59B2",
+        fontWeight: "bold",
     },
     btnLogin: {
         width: "90%",
         height: 50,
         borderWidth: 1,
         borderRadius: 10,
-        marginTop: 30,
-        backgroundColor: "#0195fd"
+        marginTop: 45,
+        backgroundColor: "#FF59B2"
     },
     btnLoginText: {
         color: "white",
@@ -103,5 +116,24 @@ const css = StyleSheet.create({
     errorText: {
         color: "white",
         textAlign: "center"
+    },
+    box: {
+        width: "80%",
+        backgroundColor: "#232323",
+        justifyContent: "center",
+        alignItems: "center",
+        height: 460,
+        borderColor: "#FFD124",
+        borderWidth: 2,
+        borderRadius: 15,
+    },
+    esqueciSenha: {
+        width: "90%",  
+        justifyContent: "flex-start",
+        alignItems: "flex-start",
+    },
+    esqueciSenhaText:{
+        color: "#FFD124",
+        fontWeight: "bold",
     }
 });
