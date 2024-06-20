@@ -6,11 +6,11 @@ import { StyleSheet } from 'react-native'
 import { useContext } from 'react';
 import { AuthContext } from '../Context/AuthContext';
 
+import Homeico from '../Pages/Homeico';
 import MinhaConta from '../Pages/MinhaConta';
-import Home from '../Pages/Home';
+//import Home from '../Pages/Home';
 // import Busca from '../Pages/Busca';
 import Login from '../Pages/Login';
-import Homeico from '../Pages/Homeico';
 // import Videos from '../Pages/Videos';
 // import Perfil from '../Pages/Perfil';
 // import Inserir from '../Pages/Inserir';
@@ -46,7 +46,7 @@ export default function Rotas() {
                     tabBarInactiveTintColor: "white",
                   }}>
                 <Tab.Screen
-                    name="Homeico"
+                    name="homeico"
                     component={Homeico}
                     options={{
                         tabBarIcon: ({ color, size }) => (

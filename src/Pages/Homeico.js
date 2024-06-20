@@ -1,21 +1,28 @@
 import React, { useState } from 'react'
 import { StyleSheet, View, Text, Image, FlatList, ScrollView } from 'react-native'
 
+
 export default function Homeico() {
 
   const banner1 = [
-    require('../../assets/mulheres.png'),
-    require('../../assets/vitorbanner.jpeg'),
-    require('../../assets/isabellabaner.jpeg'),
-    require('../../assets/melinabanner.jpeg'),
-    require('../../assets/bannerplanos.jpeg'),
 
+    require('../../assets/melinabanner.png'),
+    require('../../assets/vitorbanner.png'),
+    require('../../assets/mulheresbanner.png'),
+    require('../../assets/isabellabanner.png'),
   ];
 
   const banner2 = [
     require('../../assets/melinaatu.png'),
     require('../../assets/kauanatu.png'),
     require('../../assets/isabellaatu.png'),
+
+  ];
+
+  const banner3 = [
+    require('../../assets/Isabellapremio.jpg'),
+    require('../../assets/loudganhachampions.jpg'),
+    require('../../assets/GDEA.jpg'),
 
   ];
 
@@ -35,7 +42,8 @@ export default function Homeico() {
             horizontal={true}
             data={banner1}
             renderItem={({ item }) => (
-              <Image source={item} style={{ width: 660, height: 170,  }} />
+              <Image source={item} style={{  borderRadius: 5, marginRight: 20, marginLeft: 2 }} />
+             
             )}
             />
         </View>
@@ -46,13 +54,41 @@ export default function Homeico() {
             horizontal={true}
             data={banner2}
             renderItem={({ item }) => (
-              <Image source={item} style={{ width: 250, height: 300, marginLeft: 30, marginRight:30  }} />
+              <View style={css.shadowBox}>
+
+              <Image source={item} style={[style=css.image, { width: 250, height: 300, marginLeft: 30,marginRight:10, borderWidth: 2, borderRadius: 10, borderColor:"#A076F9"  }]} />
+              </View>
+              
             )}
             />
           </View>
         </View>
         <View style={css.fim}>
-
+        <View>
+          <Text style={css.txtbanner3}>PRÊMIOS</Text>
+          <View style={css.banner2}>
+          <FlatList
+            horizontal={true}
+            data={banner3}
+            renderItem={({ item }) => (
+              
+              <Image source={item} style={{ width: 250, height: 300, marginLeft: 30, marginRight:10,  borderRadius: 10, borderColor: "#FFFFFF", borderWidth: 2,   }} />
+              
+            )}
+            />
+            <View style={css.linhafim}></View>
+            <View>
+            <Image source={require("../../assets/logo-ico.png")} style={css.logorodape} />
+            <Text style={css.textrodapegm}>iCompass@gmail.com</Text>
+            <Image source={require("../../assets/redessc.png")} style={css.redessc} />
+            <Text style={css.textrodape}>Privacy Policy</Text>
+            <Text style={css.textrodape}>© 2024 iCompass, Inc - uma agência de marketing influenciadora.
+ Todos os direitos reservados.</Text>
+            
+            </View>
+          </View>
+        </View>
+        
         </View>
       </ScrollView>
         
@@ -82,19 +118,61 @@ const css = StyleSheet.create({
     },
     fundocarrosel:{
       width: "100%",
-      height: 200,
+      height: 190,
       backgroundColor: "black"
     },
     txtbanner2:{
       textAlign: "center",
       fontSize: 20,
       marginTop: 40,
-      fontWeight: "bold"
+      fontWeight:"bold",
     },
     banner2:{
-      marginTop: 30
+      marginTop: 30,
     },
     fim:{
-      height:200
-    }
-})
+      height: 750,
+      backgroundColor: 'black',
+      marginTop: 50
+    },
+    txtbanner3:{
+      textAlign: "center",
+      fontSize: 20,
+      marginTop: 40,
+      fontWeight: "bold",
+      color: 'white'
+    },
+    linhafim:{
+      height: 1,
+      backgroundColor: 'white',
+      width: '100%',
+      marginTop: 40,
+      color: 'white',
+      marginBottom: -20
+    },
+    textrodape:{
+      color: 'white',
+      marginLeft: 28,
+      marginTop: 20
+    },
+    textrodapegm:{
+      color: 'white',
+      marginLeft: 205,
+      marginTop: -40,
+      fontSize: 16
+    },
+    redessc: {
+      height: 30,
+      width: 180,
+      marginLeft: '49%',
+      marginTop: 15
+    },
+    logorodape:{
+      width: 70,
+        height: 70,
+        marginTop:30,
+        marginLeft: 20,
+        marginBottom: -25
+    },
+    });
+    
