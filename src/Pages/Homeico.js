@@ -157,7 +157,7 @@ const css = StyleSheet.create({
     },
     textrodapegm:{
       color: 'white',
-      marginLeft: 205,
+      marginLeft: 215,
       marginTop: -40,
       fontSize: 16
     },
