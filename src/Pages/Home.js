@@ -31,7 +31,11 @@ export default function Home() {
           <Stories produtos={produtos} />
           <FlatList
             data={produtos}
-            renderItem={({ item }) => <Produto title={item.title} price={item.price} image={item.image} description={item.description} category={item.category} rating={item.rating} />}
+            renderItem={({ item }) => <Produto title={item.title} 
+            price={item.price} image={item.image} 
+            description={item.description} 
+            category={item.category} 
+            rating={item.rating} />}
             keyExtractor={(item) => item.id}
             contentContainerStyle={{ height: (produtos.length * 600) + 110 }}
           />

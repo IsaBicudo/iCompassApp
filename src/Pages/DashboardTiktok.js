@@ -6,7 +6,7 @@ import Header from '../Components/Header';
 
 
 
-export default function DashboardIG() {
+export default function DashboardTiktok() {
     const data1 = [
         { value: 3150000 },
         { value: 2500000 },
@@ -49,18 +49,33 @@ export default function DashboardIG() {
         { value: 700000 },
         { value: 900000 },
     ];
+    const data4 = [
+        { value: 400000 },
+        { value: 700000 },
+        { value: 600000 },
+        { value: 500000 },
+        { value: 500000 },
+        { value: 300000 },
+        { value: 500000 },
+        { value: 400000 },
+        { value: 200000 },
+        { value: 420000 },
+        { value: 500000 },
+        { value: 700000 },
+    ];
     const pieData = [
         {
             value: 60,
-            color: '#912BBC',
-            gradientCenterColor: '#912BBC',
+            color: '#58D7FF',
+            gradientCenterColor: '#58D7FF',
             focused: true,
 
         },
-        { value: 40, color: '#FF3EA5', gradientCenterColor: '#FF3EA5' },
+        { value: 40, color: '#EE1D52', gradientCenterColor: '#EE1D52' },
     ];
     const renderDot = color => {
         return (
+
             <View
                 style={{
                     height: 10,
@@ -89,7 +104,7 @@ export default function DashboardIG() {
                             width: 120,
                             marginRight: 20,
                         }}>
-                        {renderDot('#FF3EA5')}
+                        {renderDot('#58D7FF')}
                         <Text style={{ color: 'white' }}>Seguindo: 60%</Text>
                     </View>
                 </View>
@@ -101,7 +116,7 @@ export default function DashboardIG() {
                             width: 130,
                             marginRight: 20,
                         }}>
-                        {renderDot('#912BBC')}
+                        {renderDot('#EE1D52')}
                         <Text style={{ color: 'white' }}>Não seguindo: 40%</Text>
                     </View>
                 </View>
@@ -125,20 +140,24 @@ export default function DashboardIG() {
                     data={data1}
                     data2={data2}
                     data3={data3}
+                    data4={data4}
                     hideDataPoints
                     spacing={27.8}
-                    color1="#FF3EA5"
-                    color2="#FFD124"
-                    color3="#912BBC"
-                    startFillColor1="#FF3EA5"
-                    startFillColor2="#FFD124"
-                    startFillColor3="#912BBC"
-                    endFillColor1="#FF3EA5"
-                    endFillColor2="#FFD124"
-                    endFillColor3="#912BBC"
+                    color1="#EE1D52"
+                    color2="#58D7FF"
+                    color3="#FFD124"
+                    color4="#FFFF"
+                    startFillColor1="#EE1D52"
+                    startFillColor2="#58D7FF"
+                    startFillColor3="#FFD124"
+                    startFillColor4="#FFFF"
+                    endFillColor1="#EE1D52"
+                    endFillColor2="#58D7FF"
+                    endFillColor3="#FFD124"
+                    endFillColor4="#FFFF"
                     startOpacity={0.9}
                     endOpacity={0.2}
-                    initialSpacing={1}
+                    initialSpacing={0}
                     noOfSections={4}
                     yAxisColor="white"
                     yAxisThickness={0}
@@ -150,11 +169,12 @@ export default function DashboardIG() {
                     pointerConfig={{
                         pointerStripUptoDataPoint: true,
                         pointerStripColor: 'lightgray',
-                        pointerStripWidth: 5,
+                        pointerStripWidth: 2,
                         strokeDashArray: [2, 5],
                         pointerColor: 'lightgray',
+                        radius: 4,
                         pointerLabelWidth: 100,
-                        pointerLabelHeight: 130,
+                        pointerLabelHeight: 120,
                         pointerLabelComponent: items => {
                             return (
                                 <View
@@ -182,8 +202,12 @@ export default function DashboardIG() {
                     <Text style={css.txt}>Curtidas</Text>
                     <View style={css.txtcoment}></View>
                     <Text style={css.txt}>Comentários</Text>
+                </View>
+                <View style={css.boxSubInfo}>
                     <View style={css.txtcompart}></View>
-                    <Text style={css.txt}>Compartilhamentos</Text>
+                    <Text style={css.txt}>Compartilhados</Text>
+                    <View style={css.txtrepu}></View>
+                    <Text style={css.txt}>Repuclicados</Text>
                 </View>
                 <View
                     style={{
@@ -216,38 +240,53 @@ export default function DashboardIG() {
                 </View>
             </View>
         </View>
-
     );
 }
 const css = StyleSheet.create({
     boxInfo: {
         width: '94%',
-        height: 70,
+        height: 35,
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
         gap: 8
     },
-    txt:{
+    boxSubInfo: {
+        width: '94%',
+        height: 35,
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: 8
+    },
+    txt: {
         color: 'white'
     },
     txtcurtidas: {
         width: 12,
         height: 12,
         borderRadius: 50,
-        backgroundColor: '#FF3EA5',
+        backgroundColor: '#EE1D52',
     },
     txtcoment: {
         width: 12,
         height: 12,
         borderRadius: 50,
-        backgroundColor: '#FFD124'
+        backgroundColor: '#58D7FF'
     },
     txtcompart: {
         width: 12,
         height: 12,
         borderRadius: 50,
-        backgroundColor: '#912BBC'
+        backgroundColor: '#FFD124'
     },
+    txtrepu: {
+        width: 12,
+        height: 12,
+        borderRadius: 50,
+        backgroundColor: '#FFFF'
+    }
 })
+

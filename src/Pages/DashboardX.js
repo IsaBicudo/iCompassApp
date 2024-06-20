@@ -6,7 +6,7 @@ import Header from '../Components/Header';
 
 
 
-export default function DashboardIG() {
+export default function DashboardX() {
     const data1 = [
         { value: 3150000 },
         { value: 2500000 },
@@ -14,12 +14,12 @@ export default function DashboardIG() {
         { value: 2400000 },
         { value: 1500000 },
         { value: 1800000 },
-        { value: 2000000 },
-        { value: 2300000 },
-        { value: 1900000 },
         { value: 1800000 },
-        { value: 2200000 },
-        { value: 1700000 },
+        { value: 1800000 },
+        { value: 1800000 },
+        { value: 1800000 },
+        { value: 1800000 },
+        { value: 1800000 },
     ];
     const data2 = [
         { value: 2100000 },
@@ -28,12 +28,12 @@ export default function DashboardIG() {
         { value: 1100000 },
         { value: 870000 },
         { value: 920000 },
-        { value: 1900000 },
-        { value: 1800000 },
-        { value: 1700000 },
-        { value: 2000000 },
-        { value: 1600000 },
-        { value: 2200000 },
+        { value: 2100000 },
+        { value: 2100000 },
+        { value: 2100000 },
+        { value: 2100000 },
+        { value: 2100000 },
+        { value: 2100000 },
     ];
     const data3 = [
         { value: 550000 },
@@ -43,21 +43,21 @@ export default function DashboardIG() {
         { value: 200000 },
         { value: 350000 },
         { value: 800000 },
-        { value: 700000 },
-        { value: 600000 },
-        { value: 500000 },
-        { value: 700000 },
-        { value: 900000 },
+        { value: 800000 },
+        { value: 800000 },
+        { value: 800000 },
+        { value: 800000 },
+        { value: 800000 },
     ];
     const pieData = [
         {
             value: 60,
-            color: '#912BBC',
-            gradientCenterColor: '#912BBC',
+            color: '#1D9BF0',
+            gradientCenterColor: '#1D9BF0',
             focused: true,
 
         },
-        { value: 40, color: '#FF3EA5', gradientCenterColor: '#FF3EA5' },
+        { value: 40, color: '#ffff', gradientCenterColor: '#ffff' },
     ];
     const renderDot = color => {
         return (
@@ -89,7 +89,7 @@ export default function DashboardIG() {
                             width: 120,
                             marginRight: 20,
                         }}>
-                        {renderDot('#FF3EA5')}
+                        {renderDot('#1D9BF0')}
                         <Text style={{ color: 'white' }}>Seguindo: 60%</Text>
                     </View>
                 </View>
@@ -101,7 +101,7 @@ export default function DashboardIG() {
                             width: 130,
                             marginRight: 20,
                         }}>
-                        {renderDot('#912BBC')}
+                        {renderDot('#ffff')}
                         <Text style={{ color: 'white' }}>Não seguindo: 40%</Text>
                     </View>
                 </View>
@@ -127,18 +127,18 @@ export default function DashboardIG() {
                     data3={data3}
                     hideDataPoints
                     spacing={27.8}
-                    color1="#FF3EA5"
-                    color2="#FFD124"
-                    color3="#912BBC"
-                    startFillColor1="#FF3EA5"
-                    startFillColor2="#FFD124"
-                    startFillColor3="#912BBC"
-                    endFillColor1="#FF3EA5"
-                    endFillColor2="#FFD124"
-                    endFillColor3="#912BBC"
+                    color1="#1D9BF0"
+                    color2="#ACACAC"
+                    color3="#ffff"
+                    startFillColor1="#1D9BF0"
+                    startFillColor2="#ACACAC"
+                    startFillColor3="#ffff"
+                    endFillColor1="#1D9BF0"
+                    endFillColor2="#ACACAC"
+                    endFillColor3="#ffff"
                     startOpacity={0.9}
                     endOpacity={0.2}
-                    initialSpacing={1}
+                    initialSpacing={0}
                     noOfSections={4}
                     yAxisColor="white"
                     yAxisThickness={0}
@@ -150,11 +150,12 @@ export default function DashboardIG() {
                     pointerConfig={{
                         pointerStripUptoDataPoint: true,
                         pointerStripColor: 'lightgray',
-                        pointerStripWidth: 5,
+                        pointerStripWidth: 2,
                         strokeDashArray: [2, 5],
                         pointerColor: 'lightgray',
+                        radius: 4,
                         pointerLabelWidth: 100,
-                        pointerLabelHeight: 130,
+                        pointerLabelHeight: 120,
                         pointerLabelComponent: items => {
                             return (
                                 <View
@@ -216,7 +217,6 @@ export default function DashboardIG() {
                 </View>
             </View>
         </View>
-
     );
 }
 const css = StyleSheet.create({
@@ -236,18 +236,18 @@ const css = StyleSheet.create({
         width: 12,
         height: 12,
         borderRadius: 50,
-        backgroundColor: '#FF3EA5',
+        backgroundColor: '#1D9BF0',
     },
     txtcoment: {
         width: 12,
         height: 12,
         borderRadius: 50,
-        backgroundColor: '#FFD124'
+        backgroundColor: '#ACACAC'
     },
     txtcompart: {
         width: 12,
         height: 12,
         borderRadius: 50,
-        backgroundColor: '#912BBC'
+        backgroundColor: '#FFFF'
     },
 })
