@@ -92,6 +92,15 @@ export default function Rotas() {
                         ),
                     }}
                 />
+                <Tab.Screen
+                    name="Perfil"
+                    component={MinhaConta}
+                    options={{
+                        tabBarIcon: ({ color, size }) => (
+                            <MaterialCommunityIcons name="circle" color={color} size={size} />
+                        ),
+                    }}
+                />
             </Tab.Navigator>
         </NavigationContainer>
     )
