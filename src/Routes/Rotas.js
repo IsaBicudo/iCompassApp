@@ -13,7 +13,7 @@ import DashboardYT from '../Pages/DashboardYT';
 import DashboardX from '../Pages/DashboardX';
 import DashboardTiktok from '../Pages/DashboardTiktok';
 import DashboardFacebook from '../Pages/DashboardFacebook';
-import Pontos from '../Pages/Pontos';
+
 
 
 const Tab = createBottomTabNavigator();
@@ -87,7 +87,7 @@ export default function Rotas() {
                 />
                 <Tab.Screen
                     name="DashboardFacebook"
-                    component={Pontos}
+                    component={DashboardFacebook}
                     options={{
                         tabBarIcon: ({ color, size }) => (
                             <MaterialCommunityIcons name="home" color={color} size={size} />

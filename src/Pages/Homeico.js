@@ -14,8 +14,8 @@ export default function Homeico() {
 
   const banner2 = [
     require('../../assets/melina.jpeg'),
-    require('../../assets/kauanatu.png'),
-    require('../../assets/isabellaatu.png'),
+    require('../../assets/kauan.jpg'),
+    require('../../assets/isacoca.jpg'),
 
   ];
 
