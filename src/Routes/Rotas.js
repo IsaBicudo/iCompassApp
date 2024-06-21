@@ -51,7 +51,7 @@ export default function Rotas() {
                         ),
                     }}
                 />
-                 <Tab.Screen
+                 {/* <Tab.Screen
                     name="DashboardIG"
                     component={DashboardIG}
                     options={{
@@ -77,7 +77,7 @@ export default function Rotas() {
                             <MaterialCommunityIcons name="home" color={color} size={size} />
                         ),
                     }}
-                />
+                /> */}
                 <Tab.Screen
                     name="Minha Conta"
                     component={MinhaConta}
@@ -87,7 +87,7 @@ export default function Rotas() {
                         ),
                     }}
                 />
-                 <Tab.Screen
+                 {/* <Tab.Screen
                     name="DashboardFacebook"
                     component={DashboardFacebook}
                     options={{
@@ -95,7 +95,7 @@ export default function Rotas() {
                             <MaterialCommunityIcons name="home" color={color} size={size} />
                         ),
                     }}
-                />
+                /> */}
 
             </Tab.Navigator>
         </NavigationContainer>
