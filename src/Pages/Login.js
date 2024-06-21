@@ -17,7 +17,7 @@ export default function Login() {
     return (
         <ScrollView contentContainerStyle={css.container}>
             <View style={css.box}>
-                <Image source={require("../../assets/iCompass-logocomp.png")} style={css.logo} />
+                <Image source={require("../../assets/img/iCompass-logocomp.png")} style={css.logo} />
                 <TextInput
                     inputMode="email"
                     placeholder="Email"

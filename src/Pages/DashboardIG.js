@@ -112,6 +112,9 @@ export default function DashboardIG() {
     return (
         <View>
             <Header />
+            <View>
+                <Image source={require("../../assets/img/setaa.jpg")} style={css.Voltar} />
+            </View>
             <View
                 style={{
                     paddingVertical: 40,
@@ -139,7 +142,7 @@ export default function DashboardIG() {
                     startOpacity={0.9}
                     endOpacity={0.2}
                     initialSpacing={1}
-                    noOfSections={4}
+                    noOfSections={7}
                     yAxisColor="white"
                     yAxisThickness={0}
                     rulesType="solid"

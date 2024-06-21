@@ -5,14 +5,16 @@ import { StyleSheet } from 'react-native';
 
 import { useContext } from 'react';
 import { AuthContext } from '../Context/AuthContext';
-import Homeico from '../Pages/Homeico';
+
 import MinhaConta from '../Pages/MinhaConta';
+import Homeico from '../Pages/Homeico';
+// import Busca from '../Pages/Busca';
 import Login from '../Pages/Login';
+// import Videos from '../Pages/Videos';
+// import Perfil from '../Pages/Perfil';
+// import Inserir from '../Pages/Inserir';
 import DashboardIG from '../Pages/DashboardIG';
-import DashboardYT from '../Pages/DashboardYT';
-import DashboardX from '../Pages/DashboardX';
-import DashboardTiktok from '../Pages/DashboardTiktok';
-import DashboardFacebook from '../Pages/DashboardFacebook';
+
 
 const Tab = createBottomTabNavigator();
 
@@ -39,7 +41,7 @@ export default function Rotas() {
                     tabBarInactiveTintColor: "white",
                 }}>
                 <Tab.Screen
-                    name="homeico"
+                    name="Homeico"
                     component={Homeico}
                     options={{
                         tabBarIcon: ({ color, size }) => (
@@ -47,7 +49,7 @@ export default function Rotas() {
                         ),
                     }}
                 />
-                <Tab.Screen
+                 <Tab.Screen
                     name="DashboardIG"
                     component={DashboardIG}
                     options={{
@@ -56,7 +58,7 @@ export default function Rotas() {
                         ),
                     }}
                 />
-                <Tab.Screen
+                {/* <Tab.Screen
                     name="DashboardYT"
                     component={DashboardYT}
                     options={{
@@ -73,17 +75,17 @@ export default function Rotas() {
                             <MaterialCommunityIcons name="home" color={color} size={size} />
                         ),
                     }}
-                />
+                /> */}
                 <Tab.Screen
-                    name="DashboardTiktok"
-                    component={DashboardTiktok}
+                    name="Minha Conta"
+                    component={MinhaConta}
                     options={{
                         tabBarIcon: ({ color, size }) => (
                             <MaterialCommunityIcons name="home" color={color} size={size} />
                         ),
                     }}
                 />
-                <Tab.Screen
+                {/* <Tab.Screen
                     name="DashboardFacebook"
                     component={DashboardFacebook}
                     options={{
@@ -91,16 +93,7 @@ export default function Rotas() {
                             <MaterialCommunityIcons name="home" color={color} size={size} />
                         ),
                     }}
-                />
-                <Tab.Screen
-                    name="Perfil"
-                    component={MinhaConta}
-                    options={{
-                        tabBarIcon: ({ color, size }) => (
-                            <MaterialCommunityIcons name="circle" color={color} size={size} />
-                        ),
-                    }}
-                />
+                />*/}
             </Tab.Navigator>
         </NavigationContainer>
     )

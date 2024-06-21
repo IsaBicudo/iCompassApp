@@ -6,11 +6,11 @@ export default function Header() {
   return (
     <View style={css.header}>
         <View>
-            <Image source={require("../../assets/logo-ico.png")} style={css.logo} />
+            <Image source={require("../../assets/img/logo-ico.png")} style={css.logo} />
         </View>
         <View style={css.boxambiente} >
             <Text style={css.txt} >Ambiente seguro</Text>
-            <Image source={require("../../assets/cadeado.png")} style={css.cadeado} />
+            <Image source={require("../../assets/img/cadeado.png")} style={css.cadeado} />
         </View>
     </View>
   )

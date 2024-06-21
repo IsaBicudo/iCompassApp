@@ -6,23 +6,23 @@ export default function Homeico() {
 
   const banner1 = [
 
-    require('../../assets/melinabanner.png'),
-    require('../../assets/vitorbanner.png'),
-    require('../../assets/mulheresbanner.png'),
-    require('../../assets/isabellabanner.png'),
+    require('../../assets/img/melinabanner.png'),
+    require('../../assets/img/vitorbanner.png'),
+    require('../../assets/img/mulheresbanner.png'),
+    require('../../assets/img/isabellabanner.png'),
   ];
 
   const banner2 = [
-    require('../../assets/melina.jpeg'),
-    require('../../assets/kauanatu.png'),
-    require('../../assets/isabellaatu.png'),
+    require('../../assets/img/melina.jpeg'),
+    require('../../assets/img/kauanatu.png'),
+    require('../../assets/img/isabellaatu.png'),
 
   ];
 
   const banner3 = [
-    require('../../assets/Isabellapremio.jpg'),
-    require('../../assets/loudganhachampions.jpg'),
-    require('../../assets/GDEA.jpg'),
+    require('../../assets/img/Isabellapremio.jpg'),
+    require('../../assets/img/loudganhachampions.jpg'),
+    require('../../assets/img/GDEA.jpg'),
 
   ];
 
@@ -30,12 +30,12 @@ export default function Homeico() {
     <View>
       <View style={css.header}>
         <View>
-          <Image source={require("../../assets/logo-ico.png")} style={css.logo} />
+          <Image source={require("../../assets/img/logo-ico.png")} style={css.logo} />
         </View>
       </View>
       <ScrollView>
         <View>
-          <Image source={require("../../assets/banner.jpeg")} style={css.banner} />
+          <Image source={require("../../assets/img/banner.jpeg")} style={css.banner} />
         </View>
         <View style={css.fundocarrosel}>
           <FlatList
@@ -80,10 +80,10 @@ export default function Homeico() {
               <View style={css.boxAll}>
                 <View style={css.boxEmail}>
                   <Text style={css.emailrodapegm}>iCompass@gmail.com</Text>
-                  <Image source={require("../../assets/redessc.png")} style={css.redessc} />
+                  <Image source={require("../../assets/img/redessc.png")} style={css.redessc} />
                 </View>
                 <View style={css.boxImg}>
-                  <Image source={require("../../assets/logo-ico.png")} style={css.logorodape} />
+                  <Image source={require("../../assets/img/logo-ico.png")} style={css.logorodape} />
                 </View>
               </View>
             </View>
