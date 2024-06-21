@@ -5,8 +5,10 @@ import { StyleSheet } from 'react-native';
 
 import { useContext } from 'react';
 import { AuthContext } from '../Context/AuthContext';
-import Homeico from '../Pages/Homeico';
+
 import MinhaConta from '../Pages/MinhaConta';
+import Homeico from '../Pages/Homeico';
+// import Busca from '../Pages/Busca';
 import Login from '../Pages/Login';
 import DashboardIG from '../Pages/DashboardIG';
 import DashboardYT from '../Pages/DashboardYT';
@@ -41,7 +43,7 @@ export default function Rotas() {
                     tabBarInactiveTintColor: "white",
                 }}>
                 <Tab.Screen
-                    name="homeico"
+                    name="Homeico"
                     component={Homeico}
                     options={{
                         tabBarIcon: ({ color, size }) => (
@@ -49,7 +51,7 @@ export default function Rotas() {
                         ),
                     }}
                 />
-                <Tab.Screen
+                 <Tab.Screen
                     name="DashboardIG"
                     component={DashboardIG}
                     options={{
@@ -77,15 +79,15 @@ export default function Rotas() {
                     }}
                 />
                 <Tab.Screen
-                    name="DashboardTiktok"
-                    component={DashboardTiktok}
+                    name="Minha Conta"
+                    component={MinhaConta}
                     options={{
                         tabBarIcon: ({ color, size }) => (
                             <MaterialCommunityIcons name="home" color={color} size={size} />
                         ),
                     }}
                 />
-                <Tab.Screen
+                 <Tab.Screen
                     name="DashboardFacebook"
                     component={DashboardFacebook}
                     options={{
