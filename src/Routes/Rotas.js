@@ -25,9 +25,11 @@ const Tab = createBottomTabNavigator();
 
 export default function Rotas() {
 
+
+    //@todo importação dos controladores de estado do cadastro
     const { logado } = useContext(AuthContext);
 
-    if (!logado) {
+    if (!logado ) {
         
         return (<Login />)
     }

@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, Pressable } from 'react-native';
 import { LineChart } from "react-native-gifted-charts";
 import { PieChart } from "react-native-gifted-charts";
 import Header from '../Components/Header';
 
 
 
-export default function DashboardFacebook({ setInstagram }) {
+export default function DashboardFacebook({ setFacebook }) {
     const data1 = [
         { value: 1150000 },
         { value: 1500000 },
@@ -111,7 +111,10 @@ export default function DashboardFacebook({ setInstagram }) {
     return (
         <View style={{ backgroundColor: 'black' }}>
             <Header />
-            <Image source={require("../../assets/img/setaa.jpg")} style={css.Voltar} onPress={ () => { setInstagram( false )} }/>
+            <Pressable onPress={ () => { setFacebook( false )} }>
+            <Image source={require("../../assets/img/setaa.jpg")} style={css.Voltar} />
+            </Pressable>
+            
             <View
                 style={{
                     paddingVertical: 40,

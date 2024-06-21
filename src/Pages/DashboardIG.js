@@ -1,25 +1,25 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Button } from 'react-native';
 import { LineChart } from "react-native-gifted-charts";
 import { PieChart } from "react-native-gifted-charts";
 import Header from '../Components/Header';
 
 
 
-export default function DashboardIG({ setInstagram }) {
+export default function DashboardIG( { setInstagram } ) {
     const data1 = [
-        { value: 3100000, label: 'Jan' },
-        { value: 2900000, label: 'Fev' },
-        { value: 2940000, label: 'Mar' },
-        { value: 2780000, label: 'Abr' },
-        { value: 2450000, label: 'Mai' },
-        { value: 2300000, label: 'Jun' },
-        { value: 2780000, label: 'Jul' },
-        { value: 2870000, label: 'Ago' },
-        { value: 2340000, label: 'Set' },
-        { value: 2650000, label: 'Out' },
-        { value: 2960000, label: 'Nov' },
-        { value: 2590000, label: 'Dez' },
+        { value: 3100000 },
+        { value: 2900000 },
+        { value: 2940000 },
+        { value: 2780000 },
+        { value: 2450000 },
+        { value: 2300000 },
+        { value: 2780000 },
+        { value: 2870000 },
+        { value: 2340000 },
+        { value: 2650000 },
+        { value: 2960000 },
+        { value: 2590000 },
     ];
     const data2 = [
         { value: 2100000 },
@@ -110,9 +110,9 @@ export default function DashboardIG({ setInstagram }) {
     };
 
     return (
-        <View style={{ backgroundColor: 'black' }}>
+        <View>
             <Header />
-            <Image source={require("../../assets/img/setaa.jpg")} style={css.Voltar} onPress={() => { setInstagram(false) }} />
+            <Button title='voltar' onPress={ () => setInstagram( false )}/>
             <View
                 style={{
                     paddingVertical: 40,
@@ -127,7 +127,7 @@ export default function DashboardIG({ setInstagram }) {
                     data2={data2}
                     data3={data3}
                     hideDataPoints
-                    spacing={40}
+                    spacing={27.8}
                     color1="#FF3EA5"
                     color2="#FFD124"
                     color3="#912BBC"
@@ -139,46 +139,39 @@ export default function DashboardIG({ setInstagram }) {
                     endFillColor3="#912BBC"
                     startOpacity={0.9}
                     endOpacity={0.2}
-                    initialSpacing={14}
-                    noOfSections={7}
+                    initialSpacing={1}
+                    noOfSections={4}
                     yAxisColor="white"
                     yAxisThickness={0}
                     rulesType="solid"
                     rulesColor="gray"
                     yAxisTextStyle={{ color: 'gray' }}
-                    xAxisLabelTextStyle={{ color: 'white' }}
                     yAxisLabelSuffix="M"
                     xAxisColor="lightgray"
                     pointerConfig={{
-                        activatePointersOnLongPress: true,
                         pointerStripUptoDataPoint: true,
                         pointerStripColor: 'lightgray',
-                        pointerStripWidth: 2,
+                        pointerStripWidth: 5,
                         strokeDashArray: [2, 5],
                         pointerColor: 'lightgray',
-                        radius: 4,
                         pointerLabelWidth: 100,
-                        pointerLabelHeight: 120,
+                        pointerLabelHeight: 130,
                         pointerLabelComponent: items => {
                             return (
                                 <View
                                     style={{
-                                        height: 130,
+                                        height: 170,
                                         width: 100,
                                         backgroundColor: '#282C3E',
                                         borderRadius: 4,
                                         justifyContent: 'center',
-                                        paddingLeft: 20,
-                                        marginTop: 40,
-                                        paddingBottom: 20,
-                                        gap: -80,
-                                        marginLeft: 20,
+                                        paddingLeft: 16,
                                     }}>
-                                    <Text style={{ color: 'lightgray', fontSize: 12 }}>{}</Text>
+                                    <Text style={{ color: 'lightgray', fontSize: 12 }}>{ }</Text>
                                     <Text style={{ color: 'white', fontWeight: 'bold' }}>{items[0].value}</Text>
-                                    <Text style={{ color: 'lightgray', fontSize: 12, marginTop: 12 }}>{}</Text>
+                                    <Text style={{ color: 'lightgray', fontSize: 12, marginTop: 12 }}>{ }</Text>
                                     <Text style={{ color: 'white', fontWeight: 'bold' }}>{items[1].value}</Text>
-                                    <Text style={{ color: 'lightgray', fontSize: 12, marginTop: 12 }}>{}</Text>
+                                    <Text style={{ color: 'lightgray', fontSize: 12, marginTop: 12 }}>{ }</Text>
                                     <Text style={{ color: 'white', fontWeight: 'bold' }}>{items[2].value}</Text>
                                 </View>
                             );
@@ -195,7 +188,7 @@ export default function DashboardIG({ setInstagram }) {
                 </View>
                 <View
                     style={{
-                        marginTop: 20,
+                        marginTop: 40,
                         alignItems: 'center',
                     }}>
                     <PieChart
@@ -237,7 +230,7 @@ const css = StyleSheet.create({
         alignItems: 'center',
         gap: 8
     },
-    txt: {
+    txt:{
         color: 'white'
     },
     txtcurtidas: {
@@ -258,10 +251,4 @@ const css = StyleSheet.create({
         borderRadius: 50,
         backgroundColor: '#912BBC'
     },
-    Voltar: {
-        width: 30,
-        height: 30,
-        marginTop: 15,
-        marginLeft: 15,
-    }
 })
