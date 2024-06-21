@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 import { LineChart } from "react-native-gifted-charts";
 import { PieChart } from "react-native-gifted-charts";
 import Header from '../Components/Header';
 
 
 
-export default function DashboardX() {
+export default function DashboardX({ setInstagram }) {
     const data1 = [
         { value: 3150000 },
         { value: 2500000 },
@@ -54,7 +54,7 @@ export default function DashboardX() {
             value: 40,
             color: '#FFFF',
             gradientCenterColor: '#FFFF',
-            
+
 
         },
         { value: 60, color: '#1D9BF0', gradientCenterColor: '#1D9BF0', focused: true, },
@@ -110,8 +110,9 @@ export default function DashboardX() {
     };
 
     return (
-        <View>
+        <View style={{ backgroundColor: 'black' }}>
             <Header />
+            <Image source={require("../../assets/img/setaa.jpg")} style={css.Voltar} onPress={ () => { setInstagram( false )} }/>
             <View
                 style={{
                     paddingVertical: 40,
@@ -188,7 +189,7 @@ export default function DashboardX() {
                 </View>
                 <View
                     style={{
-                        marginTop: 40,
+                        marginTop: 20,
                         alignItems: 'center',
                     }}>
                     <PieChart
@@ -229,7 +230,7 @@ const css = StyleSheet.create({
         alignItems: 'center',
         gap: 8
     },
-    txt:{
+    txt: {
         color: 'white'
     },
     txtcurtidas: {
@@ -249,5 +250,11 @@ const css = StyleSheet.create({
         height: 12,
         borderRadius: 50,
         backgroundColor: '#FFFF'
+    },
+    Voltar: {
+        width: 30,
+        height: 30,
+        marginTop: 15,
+        marginLeft: 15,
     },
 })

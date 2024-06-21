@@ -14,6 +14,11 @@ import Login from '../Pages/Login';
 // import Perfil from '../Pages/Perfil';
 // import Inserir from '../Pages/Inserir';
 import DashboardIG from '../Pages/DashboardIG';
+import DashboardFacebook from '../Pages/DashboardFacebook';
+import DashboardYT from '../Pages/DashboardYT';
+import DashboardX from '../Pages/DashboardX';
+import DashboardTiktok from '../Pages/DashboardTiktok';
+import Teste from '../Pages/Teste';
 
 
 const Tab = createBottomTabNavigator();
@@ -58,7 +63,7 @@ export default function Rotas() {
                         ),
                     }}
                 />
-                {/* <Tab.Screen
+                <Tab.Screen
                     name="DashboardYT"
                     component={DashboardYT}
                     options={{
@@ -75,7 +80,7 @@ export default function Rotas() {
                             <MaterialCommunityIcons name="home" color={color} size={size} />
                         ),
                     }}
-                /> */}
+                />
                 <Tab.Screen
                     name="Minha Conta"
                     component={MinhaConta}
@@ -85,7 +90,7 @@ export default function Rotas() {
                         ),
                     }}
                 />
-                {/* <Tab.Screen
+                 <Tab.Screen
                     name="DashboardFacebook"
                     component={DashboardFacebook}
                     options={{
@@ -93,7 +98,25 @@ export default function Rotas() {
                             <MaterialCommunityIcons name="home" color={color} size={size} />
                         ),
                     }}
-                />*/}
+                />
+                <Tab.Screen
+                    name="DashboardTiktok"
+                    component={DashboardTiktok}
+                    options={{
+                        tabBarIcon: ({ color, size }) => (
+                            <MaterialCommunityIcons name="home" color={color} size={size} />
+                        ),
+                    }}
+                />
+                {/* <Tab.Screen
+                    name="Teste"
+                    component={Teste}
+                    options={{
+                        tabBarIcon: ({ color, size }) => (
+                            <MaterialCommunityIcons name="home" color={color} size={size} />
+                        ),
+                    }}
+                /> */}
             </Tab.Navigator>
         </NavigationContainer>
     )

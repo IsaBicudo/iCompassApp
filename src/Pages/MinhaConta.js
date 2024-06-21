@@ -4,6 +4,10 @@ import { StyleSheet, View, Text, Image, TouchableOpacity, TextInput } from 'reac
 import Header from '../Components/Header'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import DashboardIG from './DashboardIG';
+import DashboardFacebook from './DashboardFacebook';
+import DashboardX from './DashboardX';
+import DashboardYT from './DashboardYT';
+
 
 export default function MinhaConta({ navigation }) {
 
@@ -12,25 +16,24 @@ export default function MinhaConta({ navigation }) {
     const [error, setError] = useState(false);
     const [biografia, setBiografia] = useState();
     const [imagemPerfil, setImagemPerfil] = useState();
-    const [nomeUsuario, setNomeUsuario] = useState();   
-    const [ instagram, setInstagram ] = useState(false);
-    const [ facebook, setFacebook] = useState(false);
-    const [ twitter, setTwitter] = useState(false);
-    const [ YouT, setYouT] = useState(false);
+    const [nomeUsuario, setNomeUsuario] = useState();
+    const [instagram, setInstagram] = useState(false);
+    const [facebook, setFacebook] = useState(false);
+    const [twitter, setTwitter] = useState(false);
+    const [YouT, setYouT] = useState(false);
 
-    if( instagram ) {
-        return ( <DashboardIG setInstagram={setInstagram}/> )
+    if (instagram) {
+        return (<DashboardIG setInstagram={setInstagram} />)
     }
-    if( facebook ) {
-        return ( <DashboardFacebook setFacebook={setFacebook}/> )
+    if (facebook) {
+        return (<DashboardFacebook setFacebook={setFacebook} />)
     }
-    if( twitter ) {
-        return ( <DashboardX setTwitter={setTwitter}/> )
+    if (twitter) {
+        return (<DashboardX setTwitter={setTwitter} />)
     }
-    if( YouT ) {
-        return ( <DashboardYT setYouT={setYouT} navigation={navigation}/> )
+    if (YouT) {
+        return (<DashboardYT setYouT={setYouT} />)
     }
-
 
     async function getUsuarios() {
         await fetch('http://10.133.22.8:5251/api/Usuario/GetUsuarioId/', {
@@ -59,8 +62,8 @@ export default function MinhaConta({ navigation }) {
             })
     }
 
-    async function editUser() {      
-        console.log("aqui");  
+    async function editUser() {
+        console.log("aqui");
         await fetch('http://10.133.22.8:5251/api/Usuario/UpdateUsuario/' + usuarioId, {
             method: 'PUT',
             headers: {
@@ -72,7 +75,7 @@ export default function MinhaConta({ navigation }) {
             })
         })
             .then((response) => response.json())
-            .then(json=> console.log(json))
+            .then(json => console.log(json))
             .catch(err => console.log(err));
         getUsuarios();
         setEdicao(false)
@@ -102,10 +105,10 @@ export default function MinhaConta({ navigation }) {
                         <Image source={{ uri: imagemPerfil }} style={css.foto} />
                         <Text style={css.username}>{nomeUsuario}</Text>
                         <View style={css.boxredes}>
-                            <MaterialCommunityIcons name="instagram" style={css.rede} onPress={ () => setInstagram( true )} />
-                            <MaterialCommunityIcons name="facebook" style={css.rede} onPress={ () => setFacebook( true )}/>
-                            <MaterialCommunityIcons name="twitter" style={css.rede} onPress={ () => setTwitter( true )}/>
-                            <MaterialCommunityIcons name="youtube" style={css.rede} onPress={ () => setYouT( true )}/>
+                            <MaterialCommunityIcons name="instagram" style={css.rede} onPress={() => setInstagram(true)} />
+                            <MaterialCommunityIcons name="facebook" style={css.rede} onPress={() => setFacebook(true)} />
+                            <MaterialCommunityIcons name="twitter" style={css.rede} onPress={() => setTwitter(true)} />
+                            <MaterialCommunityIcons name="youtube" style={css.rede} onPress={() => setYouT(true)} />
                         </View>
                         <View style={css.boxright}>
                             <Text style={css.biografia}>Biografia</Text>
@@ -117,13 +120,13 @@ export default function MinhaConta({ navigation }) {
                             </TouchableOpacity>
                         </View>
                         <Text style={css.cadastro}>Se cadastrou em 2024</Text>
-                    </View>                  
+                    </View>
                 </View>
                 :
                 <View style={css.container}>
-                     <MaterialCommunityIcons name="arrow-left" style={css.voltar} onPress={() => setEdicao(false)} />
+                    <MaterialCommunityIcons name="arrow-left" style={css.voltar} onPress={() => setEdicao(false)} />
                     <View style={css.edittitle}>
-                        
+
                     </View>
                     <View style={css.info1}>
                         <Image source={{ uri: imagemPerfil }} style={css.foto} />
@@ -150,9 +153,9 @@ export default function MinhaConta({ navigation }) {
                             <TouchableOpacity style={css.btnsave} onPress={() => { editUser() }}>
                                 <Text style={css.textbutton}>Salvar</Text>
                             </TouchableOpacity>
-                         </View>
+                        </View>
                     </View>
-                </View>                
+                </View>
             }
         </View>
     )
@@ -294,21 +297,21 @@ const css = StyleSheet.create({
         alignSelf: "center",
         backgroundColor: '#232323',
         color: "white"
-      },
-      edit:{
+    },
+    edit: {
         marginTop: 60,
         width: "100%",
         height: 118
-      },
-      edicao:{
+    },
+    edicao: {
         fontSize: 30,
         color: "white",
         fontSize: 18,
         fontWeight: "bold",
         color: "#FF59B2",
         marginTop: 30,
-      },
-      info1: {
+    },
+    info1: {
         width: "80%",
         backgroundColor: "#232323",
         height: 450,

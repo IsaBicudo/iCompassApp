@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 import { LineChart } from "react-native-gifted-charts";
 import { PieChart } from "react-native-gifted-charts";
 import Header from '../Components/Header';
 
 
 
-export default function DashboardTiktok() {
+export default function DashboardTiktok({ setInstagram }) {
     const data1 = [
         { value: 3700000 },
         { value: 3900000 },
@@ -55,7 +55,7 @@ export default function DashboardTiktok() {
         { value: 1900000 },
         { value: 2300000 },
         { value: 2200000 },
-        { value: 2500000},
+        { value: 2500000 },
         { value: 2870000 },
         { value: 1590000 },
         { value: 3000000 },
@@ -125,8 +125,9 @@ export default function DashboardTiktok() {
     };
 
     return (
-        <View>
+        <View style={{ backgroundColor: 'black' }}>
             <Header />
+            <Image source={require("../../assets/img/setaa.jpg")} style={css.Voltar} onPress={ () => { setInstagram( false )} }/>
             <View
                 style={{
                     paddingVertical: 40,
@@ -211,7 +212,7 @@ export default function DashboardTiktok() {
                 </View>
                 <View
                     style={{
-                        marginTop: 40,
+                        marginTop: 20,
                         alignItems: 'center',
                     }}>
                     <PieChart
@@ -287,6 +288,12 @@ const css = StyleSheet.create({
         height: 12,
         borderRadius: 50,
         backgroundColor: '#FFFF'
+    },
+    Voltar: {
+        width: 30,
+        height: 30,
+        marginTop: 15,
+        marginLeft: 15,
     }
 })
 

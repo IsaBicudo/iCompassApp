@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 import { LineChart } from "react-native-gifted-charts";
 import { PieChart } from "react-native-gifted-charts";
 import Header from '../Components/Header';
 
 
 
-export default function DashboardFacebook() {
+export default function DashboardFacebook({ setInstagram }) {
     const data1 = [
         { value: 1150000 },
         { value: 1500000 },
@@ -56,7 +56,7 @@ export default function DashboardFacebook() {
             gradientCenterColor: '#FFFF',
 
         },
-        { value: 60, color: '#106BFF', gradientCenterColor: '#106BFF', focused: true},
+        { value: 60, color: '#106BFF', gradientCenterColor: '#106BFF', focused: true },
     ];
     const renderDot = color => {
         return (
@@ -109,8 +109,9 @@ export default function DashboardFacebook() {
     };
 
     return (
-        <View>
+        <View style={{ backgroundColor: 'black' }}>
             <Header />
+            <Image source={require("../../assets/img/setaa.jpg")} style={css.Voltar} onPress={ () => { setInstagram( false )} }/>
             <View
                 style={{
                     paddingVertical: 40,
@@ -187,7 +188,7 @@ export default function DashboardFacebook() {
                 </View>
                 <View
                     style={{
-                        marginTop: 40,
+                        marginTop: 20,
                         alignItems: 'center',
                     }}>
                     <PieChart
@@ -211,7 +212,7 @@ export default function DashboardFacebook() {
                                 </View>
                             );
                         }}
-                    /> 
+                    />
                     {renderLegendComponent()}
                 </View>
             </View>
@@ -228,7 +229,7 @@ const css = StyleSheet.create({
         alignItems: 'center',
         gap: 8
     },
-    txt:{
+    txt: {
         color: 'white'
     },
     txtcurtidas: {
@@ -249,4 +250,10 @@ const css = StyleSheet.create({
         borderRadius: 50,
         backgroundColor: '#FFFF'
     },
+    Voltar: {
+        width: 30,
+        height: 30,
+        marginTop: 15,
+        marginLeft: 15,
+    }
 })

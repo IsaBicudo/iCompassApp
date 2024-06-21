@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 import { LineChart } from "react-native-gifted-charts";
 import { PieChart } from "react-native-gifted-charts";
 import Header from '../Components/Header';
 
 
 
-export default function DashboardYT() {
+export default function DashboardYT({ setInstagram }) {
     const data1 = [
         { value: 3100000 },
         { value: 3500000 },
@@ -124,8 +124,9 @@ export default function DashboardYT() {
     };
 
     return (
-        <View>
+        <View style={{ backgroundColor: 'black' }}>
             <Header />
+            <Image source={require("../../assets/img/setaa.jpg")} style={css.Voltar} onPress={ () => { setInstagram( false )} }/>
             <View
                 style={{
                     paddingVertical: 40,
@@ -153,7 +154,7 @@ export default function DashboardYT() {
                     endFillColor1="#782121"
                     endFillColor2="#FF0000"
                     endFillColor3="#ACACAC"
-                     endFillColor4="#fff"
+                    endFillColor4="#fff"
                     startOpacity={0.9}
                     endOpacity={0.2}
                     initialSpacing={0}
@@ -210,7 +211,7 @@ export default function DashboardYT() {
                 </View>
                 <View
                     style={{
-                        marginTop: 40,
+                        marginTop: 20,
                         alignItems: 'center',
                     }}>
                     <PieChart
@@ -286,5 +287,11 @@ const css = StyleSheet.create({
         height: 12,
         borderRadius: 50,
         backgroundColor: '#FFFF'
+    },
+    Voltar: {
+        width: 30,
+        height: 30,
+        marginTop: 15,
+        marginLeft: 15,
     }
 })
