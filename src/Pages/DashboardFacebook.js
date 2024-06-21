@@ -8,18 +8,18 @@ import Header from '../Components/Header';
 
 export default function DashboardFacebook({ setInstagram }) {
     const data1 = [
-        { value: 1150000 },
-        { value: 1500000 },
-        { value: 1200000 },
-        { value: 1000000 },
-        { value: 1200000 },
-        { value: 1400000 },
-        { value: 1400000 },
-        { value: 1300000 },
-        { value: 1200000 },
-        { value: 1300000 },
-        { value: 1400000 },
-        { value: 1400000 },
+        { value: 1150000, label: 'Jan' },
+        { value: 1500000, label: 'Fev' },
+        { value: 1200000, label: 'Mar'},
+        { value: 1000000, label: 'Abr'},
+        { value: 1200000, label: 'Mai' },
+        { value: 1400000, label: 'Jun'},
+        { value: 1400000, label: 'Jul' },
+        { value: 1300000, label: 'Ago' },
+        { value: 1200000, label: 'Set' },
+        { value: 1300000, label: 'Out'},
+        { value: 1400000, label: 'Nov' },
+        { value: 1400000, label: 'Dez' },
     ];
     const data2 = [
         { value: 1200000 },

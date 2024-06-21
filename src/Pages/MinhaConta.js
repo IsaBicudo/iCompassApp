@@ -9,7 +9,7 @@ import DashboardX from './DashboardX';
 import DashboardYT from './DashboardYT';
 
 
-export default function MinhaConta({ navigation }) {
+export default function MinhaConta() {
 
     const [edicao, setEdicao] = useState(false);
     const [usuarioId, setUsuarioId] = useState(2);
