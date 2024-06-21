@@ -10,13 +10,13 @@ export default function Login() {
     const { Login, error } = useContext(AuthContext);
 
     function RealizaLogin() {
-        Login(email, senha)
+        Login(email, senha);
     }
     
     return (
         <ScrollView contentContainerStyle={css.container}>
             <View style={css.box}>
-                <Image source={require("../../assets/logo-icompass.png")} style={css.logo} />
+                <Image source={require("../../assets/iCompass-logocomp.png")} style={css.logo} />
                 <TextInput
                     inputMode="email"
                     placeholder="Email"
@@ -49,7 +49,9 @@ export default function Login() {
                         <Text style={css.errorText}>Revise os campos. Tente novamente!</Text>
                     </View>
                 }
+
             </View>
+
         </ScrollView>
     )
 }
@@ -71,13 +73,26 @@ const css = StyleSheet.create({
         height: 50,
         borderRadius: 10,
         marginBottom: 18,
+        marginBottom: 18,
         padding: 15,
+        backgroundColor: "white",
+        color: "black",
         backgroundColor: "white",
         color: "black",
     },
     semCadastro: {
         width: "90%",
         marginTop: 10,
+        justifyContent: "flex-start",
+        alignItems: "flex-start",
+        display: "flex",
+        flexDirection: "row",
+        gap:40
+
+    },
+    semCadastroText: {
+        color: "white",
+        fontWeight: "bold",
         justifyContent: "flex-start",
         alignItems: "flex-start",
         display: "flex",
@@ -99,6 +114,8 @@ const css = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 10,
         marginTop: 45,
+        backgroundColor: "#FF59B2",
+        marginTop: 45,
         backgroundColor: "#FF59B2"
     },
     btnLoginText: {
@@ -116,6 +133,25 @@ const css = StyleSheet.create({
     errorText: {
         color: "white",
         textAlign: "center"
+    },
+    box: {
+        width: "80%",
+        backgroundColor: "#232323",
+        justifyContent: "center",
+        alignItems: "center",
+        height: 460,
+        borderColor: "#FFD124",
+        borderWidth: 2,
+        borderRadius: 15,
+    },
+    esqueciSenha: {
+        width: "90%",  
+        justifyContent: "flex-start",
+        alignItems: "flex-start",
+    },
+    esqueciSenhaText:{
+        color: "#FFD124",
+        fontWeight: "bold",
     },
     box: {
         width: "80%",
