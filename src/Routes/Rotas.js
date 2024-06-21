@@ -19,6 +19,8 @@ import DashboardYT from '../Pages/DashboardYT';
 import DashboardX from '../Pages/DashboardX';
 import DashboardTiktok from '../Pages/DashboardTiktok';
 import DashboardFacebook from '../Pages/DashboardFacebook';
+import Pontos from '../Pages/Pontos';
+
 
 
 
@@ -92,13 +94,14 @@ export default function Rotas() {
                 />
                 <Tab.Screen
                     name="DashboardFacebook"
-                    component={DashboardFacebook}
+                    component={Pontos}
                     options={{
                         tabBarIcon: ({ color, size }) => (
                             <MaterialCommunityIcons name="home" color={color} size={size} />
                         ),
                     }}
                 />
+
             </Tab.Navigator>
         </NavigationContainer>
     )

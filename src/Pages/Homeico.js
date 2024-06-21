@@ -90,6 +90,7 @@ export default function Homeico() {
         </View>
         
         </View>
+        
       </ScrollView>
         
 
