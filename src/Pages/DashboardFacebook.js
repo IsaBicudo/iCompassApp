@@ -8,56 +8,55 @@ import Header from '../Components/Header';
 
 export default function DashboardFacebook() {
     const data1 = [
-        { value: 3150000 },
-        { value: 2500000 },
-        { value: 2000000 },
-        { value: 2400000 },
+        { value: 1150000 },
         { value: 1500000 },
-        { value: 1800000 },
-        { value: 1800000 },
-        { value: 1800000 },
-        { value: 1800000 },
-        { value: 1800000 },
-        { value: 1800000 },
-        { value: 1800000 },
+        { value: 1200000 },
+        { value: 1000000 },
+        { value: 1200000 },
+        { value: 1400000 },
+        { value: 1400000 },
+        { value: 1300000 },
+        { value: 1200000 },
+        { value: 1300000 },
+        { value: 1400000 },
+        { value: 1400000 },
     ];
     const data2 = [
-        { value: 2100000 },
-        { value: 990000 },
-        { value: 980000 },
+        { value: 1200000 },
+        { value: 1400000 },
+        { value: 1400000 },
+        { value: 1400000 },
+        { value: 1400000 },
+        { value: 1500000 },
         { value: 1100000 },
-        { value: 870000 },
-        { value: 920000 },
-        { value: 2100000 },
-        { value: 2100000 },
-        { value: 2100000 },
-        { value: 2100000 },
-        { value: 2100000 },
-        { value: 2100000 },
+        { value: 1300000 },
+        { value: 1300000 },
+        { value: 1400000 },
+        { value: 1120000 },
+        { value: 1230000 },
     ];
     const data3 = [
-        { value: 550000 },
-        { value: 800000 },
+        { value: 750000 },
+        { value: 700000 },
         { value: 820000 },
-        { value: 600000 },
-        { value: 200000 },
-        { value: 350000 },
-        { value: 800000 },
-        { value: 800000 },
-        { value: 800000 },
-        { value: 800000 },
-        { value: 800000 },
-        { value: 800000 },
+        { value: 503000 },
+        { value: 702000 },
+        { value: 755000 },
+        { value: 846000 },
+        { value: 437000 },
+        { value: 727000 },
+        { value: 731000 },
+        { value: 740200 },
+        { value: 759300 },
     ];
     const pieData = [
         {
-            value: 60,
-            color: '#106BFF',
-            gradientCenterColor: '#106BFF',
-            focused: true,
+            value: 40,
+            color: '#FFFF',
+            gradientCenterColor: '#FFFF',
 
         },
-        { value: 40, color: '#ffff', gradientCenterColor: '#ffff' },
+        { value: 60, color: '#106BFF', gradientCenterColor: '#106BFF', focused: true},
     ];
     const renderDot = color => {
         return (
@@ -90,7 +89,7 @@ export default function DashboardFacebook() {
                             marginRight: 20,
                         }}>
                         {renderDot('#106BFF')}
-                        <Text style={{ color: 'white' }}>Amigos: 60%</Text>
+                        <Text style={{ color: 'white' }}>Amigos: 40%</Text>
                     </View>
                 </View>
                 <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
@@ -102,7 +101,7 @@ export default function DashboardFacebook() {
                             marginRight: 20,
                         }}>
                         {renderDot('#ffff')}
-                        <Text style={{ color: 'white' }}>Não amigos: 40%</Text>
+                        <Text style={{ color: 'white' }}>Não amigos: 60%</Text>
                     </View>
                 </View>
             </>
@@ -188,7 +187,7 @@ export default function DashboardFacebook() {
                 </View>
                 <View
                     style={{
-                        marginTop: 10,
+                        marginTop: 40,
                         alignItems: 'center',
                     }}>
                     <PieChart
@@ -206,13 +205,13 @@ export default function DashboardFacebook() {
                                 <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                                     <Text
                                         style={{ fontSize: 22, color: 'white', fontWeight: 'bold' }}>
-                                        60%
+                                        40%
                                     </Text>
-                                    <Text style={{ fontSize: 14, color: 'white' }}>Seguindo</Text>
+                                    <Text style={{ fontSize: 14, color: 'white' }}>Amigos</Text>
                                 </View>
                             );
                         }}
-                    />
+                    /> 
                     {renderLegendComponent()}
                 </View>
             </View>

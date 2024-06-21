@@ -8,56 +8,56 @@ import Header from '../Components/Header';
 
 export default function DashboardIG() {
     const data1 = [
-        { value: 3150000 },
-        { value: 2500000 },
-        { value: 2000000 },
-        { value: 2400000 },
-        { value: 1500000 },
-        { value: 1800000 },
-        { value: 2000000 },
+        { value: 3100000 },
+        { value: 2900000 },
+        { value: 2940000 },
+        { value: 2780000 },
+        { value: 2450000 },
         { value: 2300000 },
-        { value: 1900000 },
-        { value: 1800000 },
-        { value: 2200000 },
-        { value: 1700000 },
+        { value: 2780000 },
+        { value: 2870000 },
+        { value: 2340000 },
+        { value: 2650000 },
+        { value: 2960000 },
+        { value: 2590000 },
     ];
     const data2 = [
         { value: 2100000 },
-        { value: 990000 },
-        { value: 980000 },
-        { value: 1100000 },
-        { value: 870000 },
-        { value: 920000 },
-        { value: 1900000 },
-        { value: 1800000 },
-        { value: 1700000 },
-        { value: 2000000 },
-        { value: 1600000 },
+        { value: 2400000 },
+        { value: 2480000 },
         { value: 2200000 },
+        { value: 2300000 },
+        { value: 2200000 },
+        { value: 2400000 },
+        { value: 2760000 },
+        { value: 2300000 },
+        { value: 2230000 },
+        { value: 2560000 },
+        { value: 2790000 },
     ];
     const data3 = [
-        { value: 550000 },
-        { value: 800000 },
-        { value: 820000 },
-        { value: 600000 },
-        { value: 200000 },
-        { value: 350000 },
-        { value: 800000 },
-        { value: 700000 },
-        { value: 600000 },
-        { value: 500000 },
-        { value: 700000 },
-        { value: 900000 },
+        { value: 2200000 },
+        { value: 2000000 },
+        { value: 2200000 },
+        { value: 2000000 },
+        { value: 2000000 },
+        { value: 2200000 },
+        { value: 2230000 },
+        { value: 2380000 },
+        { value: 2230000 },
+        { value: 2250000 },
+        { value: 2320000 },
+        { value: 2540000 },
     ];
     const pieData = [
         {
             value: 60,
-            color: '#912BBC',
-            gradientCenterColor: '#912BBC',
+            color: '#FF3EA5',
+            gradientCenterColor: '#FF3EA5',
             focused: true,
 
         },
-        { value: 40, color: '#FF3EA5', gradientCenterColor: '#FF3EA5' },
+        { value: 40, color: '#912BBC', gradientCenterColor: '#912BBC' },
     ];
     const renderDot = color => {
         return (
@@ -187,7 +187,7 @@ export default function DashboardIG() {
                 </View>
                 <View
                     style={{
-                        marginTop: 10,
+                        marginTop: 40,
                         alignItems: 'center',
                     }}>
                     <PieChart

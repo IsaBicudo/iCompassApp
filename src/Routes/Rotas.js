@@ -1,26 +1,18 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
 import { useContext } from 'react';
 import { AuthContext } from '../Context/AuthContext';
-
 import Homeico from '../Pages/Homeico';
 import MinhaConta from '../Pages/MinhaConta';
-//import Home from '../Pages/Home';
-// import Busca from '../Pages/Busca';
 import Login from '../Pages/Login';
-// import Videos from '../Pages/Videos';
-// import Perfil from '../Pages/Perfil';
-// import Inserir from '../Pages/Inserir';
 import DashboardIG from '../Pages/DashboardIG';
 import DashboardYT from '../Pages/DashboardYT';
 import DashboardX from '../Pages/DashboardX';
 import DashboardTiktok from '../Pages/DashboardTiktok';
 import DashboardFacebook from '../Pages/DashboardFacebook';
-
-
 
 const Tab = createBottomTabNavigator();
 
@@ -29,6 +21,7 @@ export default function Rotas() {
     const { logado } = useContext(AuthContext);
 
     if (!logado) {
+        
         return (<Login />)
     }
 
@@ -44,7 +37,7 @@ export default function Rotas() {
                     tabBarActiveBackgroundColor: "#383838",
                     tabBarActiveTintColor: "#A076F9",
                     tabBarInactiveTintColor: "white",
-                  }}>
+                }}>
                 <Tab.Screen
                     name="homeico"
                     component={Homeico}

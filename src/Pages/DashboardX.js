@@ -14,50 +14,50 @@ export default function DashboardX() {
         { value: 2400000 },
         { value: 1500000 },
         { value: 1800000 },
-        { value: 1800000 },
-        { value: 1800000 },
-        { value: 1800000 },
-        { value: 1800000 },
-        { value: 1800000 },
-        { value: 1800000 },
+        { value: 2800000 },
+        { value: 2000000 },
+        { value: 2150000 },
+        { value: 3000000 },
+        { value: 2900000 },
+        { value: 3060000 },
     ];
     const data2 = [
         { value: 2100000 },
-        { value: 990000 },
-        { value: 980000 },
-        { value: 1100000 },
-        { value: 870000 },
-        { value: 920000 },
-        { value: 2100000 },
-        { value: 2100000 },
-        { value: 2100000 },
-        { value: 2100000 },
-        { value: 2100000 },
-        { value: 2100000 },
+        { value: 2080000 },
+        { value: 2130000 },
+        { value: 2230000 },
+        { value: 1900000 },
+        { value: 1500000 },
+        { value: 2400000 },
+        { value: 2600000 },
+        { value: 2500000 },
+        { value: 1500000 },
+        { value: 1400000 },
+        { value: 2000000 },
     ];
     const data3 = [
-        { value: 550000 },
-        { value: 800000 },
-        { value: 820000 },
-        { value: 600000 },
-        { value: 200000 },
-        { value: 350000 },
-        { value: 800000 },
-        { value: 800000 },
-        { value: 800000 },
-        { value: 800000 },
-        { value: 800000 },
-        { value: 800000 },
+        { value: 1900000 },
+        { value: 2000000 },
+        { value: 2130000 },
+        { value: 2100000 },
+        { value: 1500000 },
+        { value: 1800000 },
+        { value: 2500000 },
+        { value: 2000000 },
+        { value: 1800000 },
+        { value: 2100000 },
+        { value: 2800000 },
+        { value: 2500000 },
     ];
     const pieData = [
         {
-            value: 60,
-            color: '#1D9BF0',
-            gradientCenterColor: '#1D9BF0',
-            focused: true,
+            value: 40,
+            color: '#FFFF',
+            gradientCenterColor: '#FFFF',
+            
 
         },
-        { value: 40, color: '#ffff', gradientCenterColor: '#ffff' },
+        { value: 60, color: '#1D9BF0', gradientCenterColor: '#1D9BF0', focused: true, },
     ];
     const renderDot = color => {
         return (
@@ -90,7 +90,7 @@ export default function DashboardX() {
                             marginRight: 20,
                         }}>
                         {renderDot('#1D9BF0')}
-                        <Text style={{ color: 'white' }}>Seguindo: 60%</Text>
+                        <Text style={{ color: 'white' }}>Seguindo: 40%</Text>
                     </View>
                 </View>
                 <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
@@ -102,7 +102,7 @@ export default function DashboardX() {
                             marginRight: 20,
                         }}>
                         {renderDot('#ffff')}
-                        <Text style={{ color: 'white' }}>Não seguindo: 40%</Text>
+                        <Text style={{ color: 'white' }}>Não seguindo: 60%</Text>
                     </View>
                 </View>
             </>
@@ -188,7 +188,7 @@ export default function DashboardX() {
                 </View>
                 <View
                     style={{
-                        marginTop: 10,
+                        marginTop: 40,
                         alignItems: 'center',
                     }}>
                     <PieChart
@@ -206,7 +206,7 @@ export default function DashboardX() {
                                 <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                                     <Text
                                         style={{ fontSize: 22, color: 'white', fontWeight: 'bold' }}>
-                                        60%
+                                        40%
                                     </Text>
                                     <Text style={{ fontSize: 14, color: 'white' }}>Seguindo</Text>
                                 </View>

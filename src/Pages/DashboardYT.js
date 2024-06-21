@@ -8,56 +8,70 @@ import Header from '../Components/Header';
 
 export default function DashboardYT() {
     const data1 = [
-        { value: 3150000 },
-        { value: 2500000 },
-        { value: 2000000 },
-        { value: 2400000 },
-        { value: 1500000 },
-        { value: 1800000 },
-        { value: 2000000 },
-        { value: 2300000 },
-        { value: 1900000 },
-        { value: 1800000 },
-        { value: 2200000 },
-        { value: 1700000 },
+        { value: 3100000 },
+        { value: 3500000 },
+        { value: 3900000 },
+        { value: 3400000 },
+        { value: 3900000 },
+        { value: 3600000 },
+        { value: 3500000 },
+        { value: 3200000 },
+        { value: 3900000 },
+        { value: 3800000 },
+        { value: 3900000 },
+        { value: 3900000 },
     ];
     const data2 = [
-        { value: 2100000 },
-        { value: 990000 },
-        { value: 980000 },
-        { value: 1100000 },
-        { value: 870000 },
-        { value: 920000 },
-        { value: 1900000 },
-        { value: 1800000 },
-        { value: 1700000 },
-        { value: 2000000 },
-        { value: 1600000 },
-        { value: 2200000 },
+        { value: 2700000 },
+        { value: 2900000 },
+        { value: 2800000 },
+        { value: 2900000 },
+        { value: 2700000 },
+        { value: 2860000 },
+        { value: 2900000 },
+        { value: 2800000 },
+        { value: 2700000 },
+        { value: 2960000 },
+        { value: 2600000 },
+        { value: 2800000 },
     ];
     const data3 = [
-        { value: 550000 },
-        { value: 800000 },
-        { value: 820000 },
-        { value: 600000 },
-        { value: 200000 },
-        { value: 350000 },
-        { value: 800000 },
-        { value: 700000 },
-        { value: 600000 },
-        { value: 500000 },
-        { value: 700000 },
-        { value: 900000 },
+        { value: 2590000 },
+        { value: 2680000 },
+        { value: 2600000 },
+        { value: 2350000 },
+        { value: 2650000 },
+        { value: 2580000 },
+        { value: 2300000 },
+        { value: 2980000 },
+        { value: 2540000 },
+        { value: 2630000 },
+        { value: 2650000 },
+        { value: 2450000 },
+    ];
+    const data4 = [
+        { value: 2200000 },
+        { value: 2400000 },
+        { value: 2600000 },
+        { value: 2000000 },
+        { value: 2000000 },
+        { value: 2500000 },
+        { value: 2400000 },
+        { value: 2200000 },
+        { value: 2300000 },
+        { value: 2400000 },
+        { value: 2200000 },
+        { value: 2300000 },
     ];
     const pieData = [
         {
-            value: 60,
+            value: 80,
             color: '#FF0000',
             gradientCenterColor: '#FF0000',
             focused: true,
 
         },
-        { value: 40, color: '#ffff', gradientCenterColor: '#ffff' },
+        { value: 20, color: '#ffff', gradientCenterColor: '#ffff' },
     ];
     const renderDot = color => {
         return (
@@ -90,7 +104,7 @@ export default function DashboardYT() {
                             marginRight: 20,
                         }}>
                         {renderDot('#FF0000')}
-                        <Text style={{ color: 'white' }}>Inscritos: 60%</Text>
+                        <Text style={{ color: 'white' }}>Inscritos: 80%</Text>
                     </View>
                 </View>
                 <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
@@ -102,7 +116,7 @@ export default function DashboardYT() {
                             marginRight: 20,
                         }}>
                         {renderDot('#ffff')}
-                        <Text style={{ color: 'white' }}>Não inscritos: 40%</Text>
+                        <Text style={{ color: 'white' }}>Não inscritos: 20%</Text>
                     </View>
                 </View>
             </>
@@ -125,17 +139,21 @@ export default function DashboardYT() {
                     data={data1}
                     data2={data2}
                     data3={data3}
+                    data4={data4}
                     hideDataPoints
                     spacing={27.8}
-                    color1="#FF0000"
-                    color2="#ACACAC"
-                    color3="#ffff"
-                    startFillColor1="#FF0000"
-                    startFillColor2="#ACACAC"
-                    startFillColor3="#fff"
-                    endFillColor1="#FF0000"
-                    endFillColor2="#ACACAC"
-                    endFillColor3="#fff"
+                    color1="#782121"
+                    color2="#FF0000"
+                    color3="#ACACAC"
+                    color4="#ffff"
+                    startFillColor1="#782121"
+                    startFillColor2="#FF0000"
+                    startFillColor3="#ACACAC"
+                    startFillColor4="#fff"
+                    endFillColor1="#782121"
+                    endFillColor2="#FF0000"
+                    endFillColor3="#ACACAC"
+                     endFillColor4="#fff"
                     startOpacity={0.9}
                     endOpacity={0.2}
                     initialSpacing={0}
@@ -180,15 +198,19 @@ export default function DashboardYT() {
                 />
                 <View style={css.boxInfo}>
                     <View style={css.txtcurtidas}></View>
-                    <Text style={css.txt}>Curtidas</Text>
+                    <Text style={css.txt}>Visualizações</Text>
                     <View style={css.txtcoment}></View>
-                    <Text style={css.txt}>Comentários</Text>
+                    <Text style={css.txt}>Curtidas</Text>
+                </View>
+                <View style={css.boxSubInfo}>
                     <View style={css.txtcompart}></View>
-                    <Text style={css.txt}>Compartilhamentos</Text>
+                    <Text style={css.txt}>Comentários</Text>
+                    <View style={css.txtrepu}></View>
+                    <Text style={css.txt}>Ações (salvos e etc)</Text>
                 </View>
                 <View
                     style={{
-                        marginTop: 10,
+                        marginTop: 40,
                         alignItems: 'center',
                     }}>
                     <PieChart
@@ -206,7 +228,7 @@ export default function DashboardYT() {
                                 <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                                     <Text
                                         style={{ fontSize: 22, color: 'white', fontWeight: 'bold' }}>
-                                        60%
+                                        80%
                                     </Text>
                                     <Text style={{ fontSize: 14, color: 'white' }}>Seguindo</Text>
                                 </View>
@@ -222,32 +244,47 @@ export default function DashboardYT() {
 const css = StyleSheet.create({
     boxInfo: {
         width: '94%',
-        height: 70,
+        height: 35,
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
         gap: 8
     },
-    txt:{
+    boxSubInfo: {
+        width: '94%',
+        height: 35,
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: 8
+    },
+    txt: {
         color: 'white'
     },
     txtcurtidas: {
         width: 12,
         height: 12,
         borderRadius: 50,
-        backgroundColor: '#FF0000',
+        backgroundColor: '#782121',
     },
     txtcoment: {
         width: 12,
         height: 12,
         borderRadius: 50,
-        backgroundColor: '#ACACAC'
+        backgroundColor: '#FF0000'
     },
     txtcompart: {
         width: 12,
         height: 12,
         borderRadius: 50,
-        backgroundColor: '#FFFF'
+        backgroundColor: '#ACACAC'
     },
+    txtrepu: {
+        width: 12,
+        height: 12,
+        borderRadius: 50,
+        backgroundColor: '#FFFF'
+    }
 })
