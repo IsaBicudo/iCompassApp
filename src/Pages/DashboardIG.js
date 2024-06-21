@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Button } from 'react-native';
 import { LineChart } from "react-native-gifted-charts";
 import { PieChart } from "react-native-gifted-charts";
 import Header from '../Components/Header';
@@ -110,9 +110,9 @@ export default function DashboardIG({ setInstagram }) {
     };
 
     return (
-        <View style={{ backgroundColor: 'black' }}>
+        <View>
             <Header />
-            <Image source={require("../../assets/img/setaa.jpg")} style={css.Voltar} onPress={() => { setInstagram(false) }} />
+            <Button title='voltar' onPress={ () => setInstagram( false )}/>
             <View
                 style={{
                     paddingVertical: 40,
@@ -127,7 +127,7 @@ export default function DashboardIG({ setInstagram }) {
                     data2={data2}
                     data3={data3}
                     hideDataPoints
-                    spacing={40}
+                    spacing={50}
                     color1="#FF3EA5"
                     color2="#FFD124"
                     color3="#912BBC"
@@ -145,40 +145,37 @@ export default function DashboardIG({ setInstagram }) {
                     yAxisThickness={0}
                     rulesType="solid"
                     rulesColor="gray"
+                    xAxisLabelTextStyle={{ color: 'white'}}
                     yAxisTextStyle={{ color: 'gray' }}
-                    xAxisLabelTextStyle={{ color: 'white' }}
                     yAxisLabelSuffix="M"
                     xAxisColor="lightgray"
                     pointerConfig={{
-                        activatePointersOnLongPress: true,
                         pointerStripUptoDataPoint: true,
+                        activatePointersOnLongPress: true,
                         pointerStripColor: 'lightgray',
-                        pointerStripWidth: 2,
+                        pointerStripWidth: 5,
                         strokeDashArray: [2, 5],
                         pointerColor: 'lightgray',
-                        radius: 4,
                         pointerLabelWidth: 100,
-                        pointerLabelHeight: 120,
+                        pointerLabelHeight: 130,
                         pointerLabelComponent: items => {
                             return (
                                 <View
                                     style={{
-                                        height: 130,
+                                        height: 150,
                                         width: 100,
                                         backgroundColor: '#282C3E',
                                         borderRadius: 4,
                                         justifyContent: 'center',
-                                        paddingLeft: 20,
-                                        marginTop: 40,
-                                        paddingBottom: 20,
-                                        gap: -80,
-                                        marginLeft: 20,
+                                        paddingLeft: 16,
+                                        marginTop: 50,
+                                        marginLeft: 20
                                     }}>
-                                    <Text style={{ color: 'lightgray', fontSize: 12 }}>{}</Text>
+                                    <Text style={{ color: 'lightgray', fontSize: 12 }}>{ }</Text>
                                     <Text style={{ color: 'white', fontWeight: 'bold' }}>{items[0].value}</Text>
-                                    <Text style={{ color: 'lightgray', fontSize: 12, marginTop: 12 }}>{}</Text>
+                                    <Text style={{ color: 'lightgray', fontSize: 12, marginTop: 12 }}>{ }</Text>
                                     <Text style={{ color: 'white', fontWeight: 'bold' }}>{items[1].value}</Text>
-                                    <Text style={{ color: 'lightgray', fontSize: 12, marginTop: 12 }}>{}</Text>
+                                    <Text style={{ color: 'lightgray', fontSize: 12, marginTop: 12 }}>{ }</Text>
                                     <Text style={{ color: 'white', fontWeight: 'bold' }}>{items[2].value}</Text>
                                 </View>
                             );
@@ -237,7 +234,7 @@ const css = StyleSheet.create({
         alignItems: 'center',
         gap: 8
     },
-    txt: {
+    txt:{
         color: 'white'
     },
     txtcurtidas: {
@@ -258,10 +255,4 @@ const css = StyleSheet.create({
         borderRadius: 50,
         backgroundColor: '#912BBC'
     },
-    Voltar: {
-        width: 30,
-        height: 30,
-        marginTop: 15,
-        marginLeft: 15,
-    }
 })

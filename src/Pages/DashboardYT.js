@@ -1,25 +1,25 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, Button } from 'react-native';
 import { LineChart } from "react-native-gifted-charts";
 import { PieChart } from "react-native-gifted-charts";
 import Header from '../Components/Header';
 
 
 
-export default function DashboardYT({ setInstagram }) {
+export default function DashboardYT({ setYouT }) {
     const data1 = [
-        { value: 3100000 },
-        { value: 3500000 },
-        { value: 3900000 },
-        { value: 3400000 },
-        { value: 3900000 },
-        { value: 3600000 },
-        { value: 3500000 },
-        { value: 3200000 },
-        { value: 3900000 },
-        { value: 3800000 },
-        { value: 3900000 },
-        { value: 3900000 },
+        { value: 3100000, label: 'Jan' },
+        { value: 3500000, label: 'Fev' },
+        { value: 3900000, label: 'Mar' },
+        { value: 3400000, label: 'Abr' },
+        { value: 3900000, label: 'Mai' },
+        { value: 3600000, label: 'Jun' },
+        { value: 3500000, label: 'Jul' },
+        { value: 3200000, label: 'Ago' },
+        { value: 3900000, label: 'Set' },
+        { value: 3800000, label: 'Out' },
+        { value: 3900000, label: 'Nov' },
+        { value: 3900000, label: 'Dez' },
     ];
     const data2 = [
         { value: 2700000 },
@@ -126,7 +126,7 @@ export default function DashboardYT({ setInstagram }) {
     return (
         <View style={{ backgroundColor: 'black' }}>
             <Header />
-            <Image source={require("../../assets/img/setaa.jpg")} style={css.Voltar} onPress={ () => { setInstagram( false )} }/>
+            <Button title='voltar' onPress={ () => setYouT( false )}/>
             <View
                 style={{
                     paddingVertical: 40,
@@ -142,7 +142,7 @@ export default function DashboardYT({ setInstagram }) {
                     data3={data3}
                     data4={data4}
                     hideDataPoints
-                    spacing={27.8}
+                    spacing={50}
                     color1="#782121"
                     color2="#FF0000"
                     color3="#ACACAC"
@@ -157,16 +157,18 @@ export default function DashboardYT({ setInstagram }) {
                     endFillColor4="#fff"
                     startOpacity={0.9}
                     endOpacity={0.2}
-                    initialSpacing={0}
-                    noOfSections={4}
+                    initialSpacing={14}
+                    noOfSections={7}
                     yAxisColor="white"
                     yAxisThickness={0}
                     rulesType="solid"
                     rulesColor="gray"
+                    xAxisLabelTextStyle={{ color: 'white'}}
                     yAxisTextStyle={{ color: 'gray' }}
                     yAxisLabelSuffix="M"
                     xAxisColor="lightgray"
                     pointerConfig={{
+                        activatePointersOnLongPress: true,
                         pointerStripUptoDataPoint: true,
                         pointerStripColor: 'lightgray',
                         pointerStripWidth: 2,
@@ -179,12 +181,14 @@ export default function DashboardYT({ setInstagram }) {
                             return (
                                 <View
                                     style={{
-                                        height: 170,
+                                        height: 150,
                                         width: 100,
                                         backgroundColor: '#282C3E',
                                         borderRadius: 4,
                                         justifyContent: 'center',
                                         paddingLeft: 16,
+                                        marginTop: 50,
+                                        marginLeft: 20
                                     }}>
                                     <Text style={{ color: 'lightgray', fontSize: 12 }}>{ }</Text>
                                     <Text style={{ color: 'white', fontWeight: 'bold' }}>{items[0].value}</Text>

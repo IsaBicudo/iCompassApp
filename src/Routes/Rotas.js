@@ -8,26 +8,20 @@ import { AuthContext } from '../Context/AuthContext';
 
 import MinhaConta from '../Pages/MinhaConta';
 import Homeico from '../Pages/Homeico';
-// import Busca from '../Pages/Busca';
 import Login from '../Pages/Login';
-// import Videos from '../Pages/Videos';
-// import Perfil from '../Pages/Perfil';
-// import Inserir from '../Pages/Inserir';
-import DashboardIG from '../Pages/DashboardIG';
-import DashboardFacebook from '../Pages/DashboardFacebook';
-import DashboardYT from '../Pages/DashboardYT';
-import DashboardX from '../Pages/DashboardX';
-import DashboardTiktok from '../Pages/DashboardTiktok';
-import Teste from '../Pages/Teste';
+
+
 
 
 const Tab = createBottomTabNavigator();
 
 export default function Rotas() {
 
+
+    //@todo importação dos controladores de estado do cadastro
     const { logado } = useContext(AuthContext);
 
-    if (!logado) {
+    if (!logado ) {
         
         return (<Login />)
     }
@@ -54,69 +48,15 @@ export default function Rotas() {
                         ),
                     }}
                 />
-                 <Tab.Screen
-                    name="DashboardIG"
-                    component={DashboardIG}
-                    options={{
-                        tabBarIcon: ({ color, size }) => (
-                            <MaterialCommunityIcons name="home" color={color} size={size} />
-                        ),
-                    }}
-                />
-                <Tab.Screen
-                    name="DashboardYT"
-                    component={DashboardYT}
-                    options={{
-                        tabBarIcon: ({ color, size }) => (
-                            <MaterialCommunityIcons name="home" color={color} size={size} />
-                        ),
-                    }}
-                />
-                <Tab.Screen
-                    name="DashboardX"
-                    component={DashboardX}
-                    options={{
-                        tabBarIcon: ({ color, size }) => (
-                            <MaterialCommunityIcons name="home" color={color} size={size} />
-                        ),
-                    }}
-                />
                 <Tab.Screen
                     name="Minha Conta"
                     component={MinhaConta}
                     options={{
                         tabBarIcon: ({ color, size }) => (
-                            <MaterialCommunityIcons name="home" color={color} size={size} />
+                            <MaterialCommunityIcons name="account-circle" color={color} size={size} />
                         ),
                     }}
                 />
-                 <Tab.Screen
-                    name="DashboardFacebook"
-                    component={DashboardFacebook}
-                    options={{
-                        tabBarIcon: ({ color, size }) => (
-                            <MaterialCommunityIcons name="home" color={color} size={size} />
-                        ),
-                    }}
-                />
-                <Tab.Screen
-                    name="DashboardTiktok"
-                    component={DashboardTiktok}
-                    options={{
-                        tabBarIcon: ({ color, size }) => (
-                            <MaterialCommunityIcons name="home" color={color} size={size} />
-                        ),
-                    }}
-                />
-                {/* <Tab.Screen
-                    name="Teste"
-                    component={Teste}
-                    options={{
-                        tabBarIcon: ({ color, size }) => (
-                            <MaterialCommunityIcons name="home" color={color} size={size} />
-                        ),
-                    }}
-                /> */}
             </Tab.Navigator>
         </NavigationContainer>
     )

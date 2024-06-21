@@ -8,18 +8,18 @@ import Header from '../Components/Header';
 
 export default function DashboardTiktok({ setInstagram }) {
     const data1 = [
-        { value: 3700000 },
-        { value: 3900000 },
-        { value: 3600000 },
-        { value: 3500000 },
-        { value: 3800000 },
-        { value: 3400000 },
-        { value: 3210000 },
-        { value: 3400000 },
-        { value: 3400000 },
-        { value: 3300000 },
-        { value: 3780000 },
-        { value: 3900000 },
+        { value: 3700000, label: 'Jan' },
+        { value: 3900000, label: 'Fev' },
+        { value: 3600000, label: 'Mar' },
+        { value: 3500000, label: 'Abr' },
+        { value: 3800000, label: 'Mai' },
+        { value: 3400000, label: 'Jun' },
+        { value: 3210000, label: 'Jul' },
+        { value: 3400000, label: 'Ago' },
+        { value: 3400000, label: 'Set' },
+        { value: 3300000, label: 'Out' },
+        { value: 3780000, label: 'Nov' },
+        { value: 3900000, label: 'Dez' },
     ];
     const data2 = [
         { value: 3000000 },
@@ -143,7 +143,7 @@ export default function DashboardTiktok({ setInstagram }) {
                     data3={data3}
                     data4={data4}
                     hideDataPoints
-                    spacing={27.8}
+                    spacing={50}
                     color1="#EE1D52"
                     color2="#FFFF"
                     color3="#58D7FF"
@@ -158,16 +158,18 @@ export default function DashboardTiktok({ setInstagram }) {
                     endFillColor4="#FFD124"
                     startOpacity={0.9}
                     endOpacity={0.2}
-                    initialSpacing={0}
-                    noOfSections={4}
+                    initialSpacing={14}
+                    noOfSections={7}
                     yAxisColor="white"
                     yAxisThickness={0}
                     rulesType="solid"
                     rulesColor="gray"
+                    xAxisLabelTextStyle={{ color: 'white'}}
                     yAxisTextStyle={{ color: 'gray' }}
                     yAxisLabelSuffix="M"
                     xAxisColor="lightgray"
                     pointerConfig={{
+                        activatePointersOnLongPress: true,
                         pointerStripUptoDataPoint: true,
                         pointerStripColor: 'lightgray',
                         pointerStripWidth: 2,
@@ -180,12 +182,14 @@ export default function DashboardTiktok({ setInstagram }) {
                             return (
                                 <View
                                     style={{
-                                        height: 170,
+                                        height: 150,
                                         width: 100,
                                         backgroundColor: '#282C3E',
                                         borderRadius: 4,
                                         justifyContent: 'center',
                                         paddingLeft: 16,
+                                        marginLeft: 20,
+                                        marginTop: 50,
                                     }}>
                                     <Text style={{ color: 'lightgray', fontSize: 12 }}>{ }</Text>
                                     <Text style={{ color: 'white', fontWeight: 'bold' }}>{items[0].value}</Text>

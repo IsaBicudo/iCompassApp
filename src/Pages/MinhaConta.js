@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useFocusEffect } from '@react-navigation/native';
-import { StyleSheet, View, Text, Image, TouchableOpacity, TextInput } from 'react-native'
+import { StyleSheet, View, Text, Image, TouchableOpacity, TextInput, Pressable } from 'react-native'
 import Header from '../Components/Header'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import DashboardIG from './DashboardIG';
@@ -22,18 +22,7 @@ export default function MinhaConta() {
     const [twitter, setTwitter] = useState(false);
     const [YouT, setYouT] = useState(false);
 
-    if (instagram) {
-        return (<DashboardIG setInstagram={setInstagram} />)
-    }
-    if (facebook) {
-        return (<DashboardFacebook setFacebook={setFacebook} />)
-    }
-    if (twitter) {
-        return (<DashboardX setTwitter={setTwitter} />)
-    }
-    if (YouT) {
-        return (<DashboardYT setYouT={setYouT} />)
-    }
+    
 
     async function getUsuarios() {
         await fetch('http://10.133.22.8:5251/api/Usuario/GetUsuarioId/', {
@@ -91,9 +80,22 @@ export default function MinhaConta() {
         }, [])
     );
 
+    if (instagram) {
+        return (<DashboardIG setInstagram={setInstagram} />)
+    }
+    if (facebook) {
+        return (<DashboardFacebook setFacebook={setFacebook} />)
+    }
+    if (twitter) {
+        return (<DashboardX setTwitter={setTwitter} />)
+    }
+    if (YouT) {
+        return (<DashboardYT setYouT={setYouT} />)
+    }
+
     return (
         <View style={css.container}>
-            <Header></Header>
+            <Header />
             {edicao == false ?
                 <View style={css.container}>
                     <Text style={css.titulo}>Minha Conta</Text>
@@ -105,10 +107,19 @@ export default function MinhaConta() {
                         <Image source={{ uri: imagemPerfil }} style={css.foto} />
                         <Text style={css.username}>{nomeUsuario}</Text>
                         <View style={css.boxredes}>
-                            <MaterialCommunityIcons name="instagram" style={css.rede} onPress={() => setInstagram(true)} />
-                            <MaterialCommunityIcons name="facebook" style={css.rede} onPress={() => setFacebook(true)} />
-                            <MaterialCommunityIcons name="twitter" style={css.rede} onPress={() => setTwitter(true)} />
-                            <MaterialCommunityIcons name="youtube" style={css.rede} onPress={() => setYouT(true)} />
+                            <Pressable onPress={() => setInstagram(true)}>
+                                <MaterialCommunityIcons name="instagram" style={css.rede}  />
+                            </Pressable>
+                            <Pressable onPress={() => setFacebook(true)}>
+                                <MaterialCommunityIcons name="facebook" style={css.rede}  />
+                            </Pressable>
+                            <Pressable onPress={() => setTwitter(true)}>
+                            <MaterialCommunityIcons name="twitter" style={css.rede}  />
+                            </Pressable>
+                            <Pressable onPress={() => setYouT(true)}>
+                                <MaterialCommunityIcons name="youtube" style={css.rede}  />
+                            </Pressable>
+                            
                         </View>
                         <View style={css.boxright}>
                             <Text style={css.biografia}>Biografia</Text>

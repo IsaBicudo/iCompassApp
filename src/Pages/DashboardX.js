@@ -1,25 +1,25 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, Button } from 'react-native';
 import { LineChart } from "react-native-gifted-charts";
 import { PieChart } from "react-native-gifted-charts";
 import Header from '../Components/Header';
 
 
 
-export default function DashboardX({ setInstagram }) {
+export default function DashboardX({ setTwitter }) {
     const data1 = [
-        { value: 3150000 },
-        { value: 2500000 },
-        { value: 2000000 },
-        { value: 2400000 },
-        { value: 1500000 },
-        { value: 1800000 },
-        { value: 2800000 },
-        { value: 2000000 },
-        { value: 2150000 },
-        { value: 3000000 },
-        { value: 2900000 },
-        { value: 3060000 },
+        { value: 3150000, label: 'Jan' },
+        { value: 2500000, label: 'Fev' },
+        { value: 2000000, label: 'Mar' },
+        { value: 2400000, label: 'Abr' },
+        { value: 1500000, label: 'Mai' },
+        { value: 1800000, label: 'Jun' },
+        { value: 2800000, label: 'Jul' },
+        { value: 2000000, label: 'Ago' },
+        { value: 2150000, label: 'Set' },
+        { value: 3000000, label: 'Out' },
+        { value: 2900000, label: 'Nov' },
+        { value: 3060000, label: 'Dez' },
     ];
     const data2 = [
         { value: 2100000 },
@@ -112,7 +112,7 @@ export default function DashboardX({ setInstagram }) {
     return (
         <View style={{ backgroundColor: 'black' }}>
             <Header />
-            <Image source={require("../../assets/img/setaa.jpg")} style={css.Voltar} onPress={ () => { setInstagram( false )} }/>
+            <Button title='voltar' onPress={ () => setTwitter( false )}/>
             <View
                 style={{
                     paddingVertical: 40,
@@ -127,7 +127,7 @@ export default function DashboardX({ setInstagram }) {
                     data2={data2}
                     data3={data3}
                     hideDataPoints
-                    spacing={27.8}
+                    spacing={50}
                     color1="#1D9BF0"
                     color2="#ACACAC"
                     color3="#ffff"
@@ -139,16 +139,18 @@ export default function DashboardX({ setInstagram }) {
                     endFillColor3="#ffff"
                     startOpacity={0.9}
                     endOpacity={0.2}
-                    initialSpacing={0}
-                    noOfSections={4}
+                    initialSpacing={14}
+                    noOfSections={7}
                     yAxisColor="white"
                     yAxisThickness={0}
                     rulesType="solid"
                     rulesColor="gray"
+                    xAxisLabelTextStyle={{ color: 'white'}}
                     yAxisTextStyle={{ color: 'gray' }}
                     yAxisLabelSuffix="M"
                     xAxisColor="lightgray"
                     pointerConfig={{
+                        activatePointersOnLongPress: true,
                         pointerStripUptoDataPoint: true,
                         pointerStripColor: 'lightgray',
                         pointerStripWidth: 2,
@@ -167,6 +169,8 @@ export default function DashboardX({ setInstagram }) {
                                         borderRadius: 4,
                                         justifyContent: 'center',
                                         paddingLeft: 16,
+                                        marginLeft: 20,
+                                        marginTop: 50
                                     }}>
                                     <Text style={{ color: 'lightgray', fontSize: 12 }}>{ }</Text>
                                     <Text style={{ color: 'white', fontWeight: 'bold' }}>{items[0].value}</Text>

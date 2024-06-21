@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, Pressable, Button } from 'react-native';
 import { LineChart } from "react-native-gifted-charts";
 import { PieChart } from "react-native-gifted-charts";
 import Header from '../Components/Header';
 
 
 
-export default function DashboardFacebook({ setInstagram }) {
+export default function DashboardFacebook({ setFacebook }) {
     const data1 = [
         { value: 1150000, label: 'Jan' },
         { value: 1500000, label: 'Fev' },
@@ -111,7 +111,8 @@ export default function DashboardFacebook({ setInstagram }) {
     return (
         <View style={{ backgroundColor: 'black' }}>
             <Header />
-            <Image source={require("../../assets/img/setaa.jpg")} style={css.Voltar} onPress={ () => { setInstagram( false )} }/>
+            <Button title='voltar' onPress={ () => setFacebook( false )}/>
+            
             <View
                 style={{
                     paddingVertical: 40,
@@ -126,7 +127,7 @@ export default function DashboardFacebook({ setInstagram }) {
                     data2={data2}
                     data3={data3}
                     hideDataPoints
-                    spacing={27.8}
+                    spacing={50}
                     color1="#106BFF"
                     color2="#7BADFF"
                     color3="#FFFF"
@@ -138,16 +139,18 @@ export default function DashboardFacebook({ setInstagram }) {
                     endFillColor3="#FFFF"
                     startOpacity={0.9}
                     endOpacity={0.2}
-                    initialSpacing={0}
-                    noOfSections={4}
+                    initialSpacing={14}
+                    noOfSections={7}
                     yAxisColor="white"
                     yAxisThickness={0}
                     rulesType="solid"
                     rulesColor="gray"
+                    xAxisLabelTextStyle={{ color: 'white'}}
                     yAxisTextStyle={{ color: 'gray' }}
                     yAxisLabelSuffix="M"
                     xAxisColor="lightgray"
                     pointerConfig={{
+                        activatePointersOnLongPress: true,
                         pointerStripUptoDataPoint: true,
                         pointerStripColor: 'lightgray',
                         pointerStripWidth: 2,
@@ -160,12 +163,14 @@ export default function DashboardFacebook({ setInstagram }) {
                             return (
                                 <View
                                     style={{
-                                        height: 170,
+                                        height: 150,
                                         width: 100,
+                                        marginTop: 50,
                                         backgroundColor: '#282C3E',
                                         borderRadius: 4,
                                         justifyContent: 'center',
                                         paddingLeft: 16,
+                                        marginLeft: 20
                                     }}>
                                     <Text style={{ color: 'lightgray', fontSize: 12 }}>{ }</Text>
                                     <Text style={{ color: 'white', fontWeight: 'bold' }}>{items[0].value}</Text>
